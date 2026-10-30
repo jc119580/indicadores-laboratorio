@@ -34,7 +34,7 @@
       </div>
       <div>
         <h4 class="font-extrabold text-[#003876] text-base" id="loadingTitle">Actualizando información...</h4>
-        <p class="text-xs text-slate-500 mt-1" id="loadingDesc">Sincronizando producción y demanda asistencial.</p>
+        <p class="text-xs text-slate-500 mt-1" id="loadingDesc">Sincronizando todas las áreas y producción asistencial.</p>
       </div>
       <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
         <div class="bg-[#00A9E0] h-full w-2/3 animate-pulse"></div>
@@ -59,19 +59,19 @@
 
     <!-- Menú de Pestañas -->
     <nav class="flex items-center gap-1.5 bg-[#002855] p-1.5 rounded-xl border border-sky-800 overflow-x-auto max-w-full">
-      <button onclick="switchTab('resumen')" id="btn-tab-resumen" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-2 transition-all bg-[#00A9E0] text-white shadow whitespace-nowrap">
+      <button onclick="switchTab('resumen')" id="btn-tab-resumen" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-2 transition-all whitespace-nowrap text-sky-200">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard w-4 h-4"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
         <span>Resumen General</span>
       </button>
-      <button onclick="switchTab('solicitudes')" id="btn-tab-solicitudes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all text-sky-200 hover:text-white whitespace-nowrap">
+      <button onclick="switchTab('solicitudes')" id="btn-tab-solicitudes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all hover:text-white whitespace-nowrap text-sky-200">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="file-check-2" aria-hidden="true" class="lucide lucide-file-check-2 w-4 h-4"><path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="m14 20 2 2 4-4"></path></svg>
         <span>Solicitudes y Médicos</span>
       </button>
-      <button onclick="switchTab('tecnologos')" id="btn-tab-tecnologos" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all text-sky-200 hover:text-white whitespace-nowrap">
+      <button onclick="switchTab('tecnologos')" id="btn-tab-tecnologos" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all hover:text-white whitespace-nowrap text-sky-200">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users w-4 h-4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
         <span>Producción Tecnólogos</span>
       </button>
-      <button onclick="switchTab('examenes')" id="btn-tab-examenes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all text-sky-200 hover:text-white whitespace-nowrap">
+      <button onclick="switchTab('examenes')" id="btn-tab-examenes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all hover:text-white whitespace-nowrap bg-[#00A9E0] text-white shadow">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="test-tube" aria-hidden="true" class="lucide lucide-test-tube w-4 h-4"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2"></path><path d="M8.5 2h7"></path><path d="M14.5 16h-5"></path></svg>
         <span>Exámenes y Áreas</span>
       </button>
@@ -81,13 +81,10 @@
     <div class="flex items-center gap-2" id="panelAccionesHeader">
       
       
-      <!-- BOTÓN CARGAR EXCEL (SOLO PARA TU PC) -->
       
 
-      <!-- BOTÓN EXPORTAR WEB (SOLO PARA TU PC) -->
       
 
-      <!-- BOTÓN IMPRIMIR (ESTE SÍ PERMANECE EN LA WEB PÚBLICA) -->
       <button onclick="window.print()" class="px-3.5 py-2 bg-white hover:bg-sky-50 text-[#003876] text-xs font-bold rounded-lg border border-white transition shadow flex items-center gap-1.5">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="printer" aria-hidden="true" class="lucide lucide-printer w-3.5 h-3.5 text-[#003876]"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"></path><rect x="6" y="14" width="12" height="8" rx="1"></rect></svg>
         <span class="hidden md:inline">Imprimir Reporte</span>
@@ -110,18 +107,18 @@
     <!-- Botonera de Segmentación Activa -->
     <div class="flex flex-wrap items-center gap-1.5 bg-[#f0f7fd] p-1 rounded-xl border border-sky-200 overflow-x-auto" id="btnGroupAreas">
       <button onclick="seleccionarAreaGlobal('TODAS')" id="btn-area-TODAS" class="area-btn px-3.5 py-1.5 text-xs rounded-lg transition-all whitespace-nowrap bg-[#003876] text-white shadow-sm font-bold">
-        TODAS (<span id="btnTxtTodas">256.459</span>)
+        TODAS (<span id="btnTxtTodas">256,459</span>)
       </button>
-      <button onclick="seleccionarAreaGlobal('CONSULTA')" id="btn-area-CONSULTA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg text-[#003876] hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap font-semibold">
+      <button onclick="seleccionarAreaGlobal('CONSULTA')" id="btn-area-CONSULTA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap text-[#003876] font-semibold">
         CONSULTA EXTERNA (<span id="btnTxtConsulta">210k</span>)
       </button>
-      <button onclick="seleccionarAreaGlobal('EMERGENCIA')" id="btn-area-EMERGENCIA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg text-[#003876] hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap font-semibold">
+      <button onclick="seleccionarAreaGlobal('EMERGENCIA')" id="btn-area-EMERGENCIA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap text-[#003876] font-semibold">
         URGENCIAS / EMERGENCIA (<span id="btnTxtEmergencia">43.5k</span>)
       </button>
-      <button onclick="seleccionarAreaGlobal('HOSPITALIZACION')" id="btn-area-HOSPITALIZACION" class="area-btn px-3.5 py-1.5 text-xs rounded-lg text-[#003876] hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap font-semibold">
+      <button onclick="seleccionarAreaGlobal('HOSPITALIZACION')" id="btn-area-HOSPITALIZACION" class="area-btn px-3.5 py-1.5 text-xs rounded-lg hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap text-[#003876] font-semibold">
         HOSPITALIZACIÓN (<span id="btnTxtHosp">3.3k</span>)
       </button>
-      <button onclick="seleccionarAreaGlobal('CENTRO_QUIRURGICO')" id="btn-area-CENTRO_QUIRURGICO" class="area-btn px-3.5 py-1.5 text-xs rounded-lg text-[#003876] hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap font-semibold">
+      <button onclick="seleccionarAreaGlobal('CENTRO_QUIRURGICO')" id="btn-area-CENTRO_QUIRURGICO" class="area-btn px-3.5 py-1.5 text-xs rounded-lg hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap text-[#003876] font-semibold">
         CENTRO QUIRÚRGICO (<span id="btnTxtCQ">12</span>)
       </button>
     </div>
@@ -131,7 +128,7 @@
   <main class="flex-1 overflow-y-auto custom-scroll p-4 md:p-6 space-y-6">
 
     <!-- ==================== PESTAÑA 1: RESUMEN GENERAL ==================== -->
-    <section id="tab-resumen" class="tab-content space-y-6">
+    <section id="tab-resumen" class="tab-content space-y-6 hidden">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="essalud-card p-5 rounded-2xl relative overflow-hidden group hover:border-[#00A9E0] transition-all">
           <div class="flex items-center justify-between">
@@ -152,8 +149,8 @@
             <div class="p-2 rounded-xl bg-emerald-50 text-emerald-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart-pulse" aria-hidden="true" class="lucide lucide-heart-pulse w-5 h-5"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></div>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <h2 class="text-3xl font-black text-emerald-600" id="kpiTotalNormal">189.574</h2>
-            <span class="text-xs font-black px-2 py-0.5 rounded bg-emerald-100 text-emerald-800" id="kpiPctNormal">73.9%</span>
+            <h2 class="text-3xl font-black text-emerald-600" id="kpiTotalNormal">188.038</h2>
+            <span class="text-xs font-black px-2 py-0.5 rounded bg-emerald-100 text-emerald-800" id="kpiPctNormal">73.3%</span>
           </div>
           <p class="text-xs text-slate-500 mt-1">Pacientes en rangos biológicos estándar</p>
           <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-emerald-500"></div>
@@ -165,8 +162,8 @@
             <div class="p-2 rounded-xl bg-rose-50 text-rose-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="alert-triangle" aria-hidden="true" class="lucide lucide-alert-triangle w-5 h-5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <h2 class="text-3xl font-black text-rose-600" id="kpiTotalPatol">66.885</h2>
-            <span class="text-xs font-black px-2 py-0.5 rounded bg-rose-100 text-rose-800" id="kpiPctPatol">26.1%</span>
+            <h2 class="text-3xl font-black text-rose-600" id="kpiTotalPatol">68.421</h2>
+            <span class="text-xs font-black px-2 py-0.5 rounded bg-rose-100 text-rose-800" id="kpiPctPatol">26.7%</span>
           </div>
           <p class="text-xs text-slate-500 mt-1">Valores alterados o críticos detectados</p>
           <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-rose-500"></div>
@@ -218,11 +215,11 @@
           </div>
           <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-sky-100 text-xs">
             <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
-              <span class="text-emerald-700 font-black block text-sm" id="boxDonutNormal">73.9%</span>
+              <span class="text-emerald-700 font-black block text-sm" id="boxDonutNormal">73.3%</span>
               <span class="text-slate-600 text-[11px] font-semibold">Normales</span>
             </div>
             <div class="p-2.5 rounded-xl bg-rose-50 border border-rose-200 text-center">
-              <span class="text-rose-700 font-black block text-sm" id="boxDonutPatol">26.1%</span>
+              <span class="text-rose-700 font-black block text-sm" id="boxDonutPatol">26.7%</span>
               <span class="text-slate-600 text-[11px] font-semibold">Patológicos</span>
             </div>
           </div>
@@ -253,15 +250,15 @@
           <td class="py-2.5 px-4 font-bold text-emerald-800 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> NORMAL (Valores estándar)
           </td>
-          <td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.930</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.822</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.715</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">23.950</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">25.853</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.001</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.901</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">14.894</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">14.435</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">15.083</td>
-          <td class="py-2.5 px-4 text-right font-mono font-black text-emerald-800 bg-sky-50/80">189.574</td>
+          <td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.930</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.822</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.715</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">23.950</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">25.853</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.001</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.901</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">14.894</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">14.435</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.537</td>
+          <td class="py-2.5 px-4 text-right font-mono font-black text-emerald-800 bg-sky-50/80">188.038</td>
         </tr>
         <tr class="hover:bg-sky-50/50 transition">
           <td class="py-2.5 px-4 font-bold text-rose-800 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> PATOLÓGICO (Valores alterados)
           </td>
-          <td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">5405</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">7408</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">7031</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">5660</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">11.002</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">4567</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6825</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6833</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6836</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">5308</td>
-          <td class="py-2.5 px-4 text-right font-mono font-black text-rose-800 bg-sky-50/80">66.885</td>
+          <td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">5405</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">7408</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">7031</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">5660</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">11.002</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">4567</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6825</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6833</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6836</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6854</td>
+          <td class="py-2.5 px-4 text-right font-mono font-black text-rose-800 bg-sky-50/80">68.421</td>
         </tr>
         <tr class="bg-sky-50/80 font-black text-[#003876] border-t-2 border-sky-200">
           <td class="py-3 px-4 font-black uppercase tracking-wider text-xs flex items-center gap-2">
@@ -274,8 +271,8 @@
           <td class="py-2 px-4 text-[11px] uppercase tracking-wider text-slate-500">
             % Tasa de Morbilidad Patológica
           </td>
-          <td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">28.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">24.5%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">23.6%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">19.1%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">29.9%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">26.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">23.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">31.4%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">32.1%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">26.0%</td>
-          <td class="py-2 px-4 text-right font-mono font-bold text-[11px] text-rose-700 bg-slate-100">26.1%</td>
+          <td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">28.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">24.5%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">23.6%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">19.1%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">29.9%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">26.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">23.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">31.4%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">32.1%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">33.6%</td>
+          <td class="py-2 px-4 text-right font-mono font-bold text-[11px] text-rose-700 bg-slate-100">26.7%</td>
         </tr>
       </tbody>
           </table>
@@ -361,7 +358,7 @@
     </section>
 
     <!-- ==================== PESTAÑA 2: SOLICITUDES Y MÉDICOS ==================== -->
-    <section id="tab-solicitudes" class="tab-content hidden space-y-6">
+    <section id="tab-solicitudes" class="tab-content space-y-6 hidden">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="essalud-card p-5 rounded-2xl flex flex-col justify-between">
           <div>
@@ -374,30 +371,30 @@
             <div class="mt-6 space-y-4">
               <div>
                 <div class="flex justify-between text-xs font-bold mb-1">
-                  <span class="text-emerald-700">NORMALES (<span id="txtSolNormales">189.574</span>)</span>
-                  <span class="text-slate-800 font-black" id="pctSolNormales">73.9%</span>
+                  <span class="text-emerald-700">NORMALES (<span id="txtSolNormales">188.038</span>)</span>
+                  <span class="text-slate-800 font-black" id="pctSolNormales">73.3%</span>
                 </div>
                 <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
-                  <div class="bg-emerald-500 h-3 rounded-full" id="barSolNormal" style="width: 73.9%"></div>
+                  <div class="bg-emerald-500 h-3 rounded-full" id="barSolNormal" style="width: 73.3%;"></div>
                 </div>
               </div>
 
               <div>
                 <div class="flex justify-between text-xs font-bold mb-1">
-                  <span class="text-rose-700">PATOLÓGICOS (<span id="txtSolPatol">66.885</span>)</span>
-                  <span class="text-slate-800 font-black" id="pctSolPatol">26.1%</span>
+                  <span class="text-rose-700">PATOLÓGICOS (<span id="txtSolPatol">68.421</span>)</span>
+                  <span class="text-slate-800 font-black" id="pctSolPatol">26.7%</span>
                 </div>
                 <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
-                  <div class="bg-rose-500 h-3 rounded-full" id="barSolPatol" style="width: 26.1%"></div>
+                  <div class="bg-rose-500 h-3 rounded-full" id="barSolPatol" style="width: 26.7%;"></div>
                 </div>
               </div>
             </div>
 
             <div class="mt-6 p-4 rounded-xl bg-sky-50 border border-sky-200 text-xs text-slate-700 leading-relaxed">
               <div class="flex items-center gap-2 text-[#003876] font-bold mb-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" aria-hidden="true" class="lucide lucide-info w-4 h-4 text-[#00A9E0]"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> Prioridad EsSalud
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" aria-hidden="true" class="lucide lucide-info w-4 h-4 text-[#00A9E0]"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> Prioridad Asistencial
               </div>
-              En los servicios de <strong class="text-[#003876]">Urgencias / Emergencia</strong>, el 18.6% de las órdenes analizadas arrojan valores patológicos, requiriendo validación inmediata.
+              Análisis consolidado de facultativos solicitantes y tasa de positividad diagnóstica en el servicio seleccionado.
             </div>
           </div>
 
@@ -416,7 +413,7 @@
             <span class="text-xs px-2.5 py-1 rounded bg-sky-50 text-[#003876] border border-sky-200 font-black">Top Facultativos</span>
           </div>
           <div class="h-72 w-full relative min-h-[260px]">
-            <canvas id="chartTopMedicos" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+            <canvas id="chartTopMedicos" height="288" style="display: block; box-sizing: border-box; height: 288px; width: 1194px;" width="1194"></canvas>
           </div>
         </div>
       </div>
@@ -438,7 +435,7 @@
             <thead class="bg-[#003876] text-white uppercase text-[11px] font-bold">
               <tr>
                 <th class="py-3 px-4">Médico Solicitante</th>
-                <th class="py-3 px-4">Áreas Asignadas</th>
+                <th class="py-3 px-4">Área / Servicio</th>
                 <th class="py-3 px-4 text-right">Normales</th>
                 <th class="py-3 px-4 text-right">Patológicos</th>
                 <th class="py-3 px-4 text-right">Total General</th>
@@ -450,12 +447,12 @@
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ALVA GUARNIZ HUGO
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Bioquímica / Microbiología</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">9830</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3120</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">12.950</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">9260</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3458</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">12.718</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">24.1%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">27.2%</span>
             </td>
           </tr>
         
@@ -463,12 +460,12 @@
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SILVA DE SANCHEZ GISELLA
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Bioquímica / Hematología</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">7800</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2360</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">10.160</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">7673</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3612</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">11.285</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">23.2%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">32.0%</span>
             </td>
           </tr>
         
@@ -476,12 +473,12 @@
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RIOS CARO MANUELA
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Bioquímica / Hematología</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">6550</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2030</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">8580</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">6588</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3052</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">9640</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">23.7%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">31.7%</span>
             </td>
           </tr>
         
@@ -489,25 +486,25 @@
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> GOICOCHEA RIOS EVELYN
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Bioquímica / Hematología</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5580</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1780</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">7360</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5381</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3094</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">8475</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">24.2%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">36.5%</span>
             </td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> LU GALARRETA LUCIA
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> MIRANDA PLASENCIA MARITA
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Microbiología / Bioquímica</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5530</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1960</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">7490</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5092</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3038</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">8130</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">26.2%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">37.4%</span>
             </td>
           </tr>
         
@@ -515,12 +512,38 @@
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> HERRERA ZAVALETA JAVIER
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Bioquímica / Hematología</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5230</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1550</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">6780</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5181</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2547</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">7728</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">22.9%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">33.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> LU GALARRETA LUCIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5484</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2081</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">7565</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">27.5%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ZAVALETA PAREDES SONNIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4780</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2077</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">6857</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">30.3%</span>
             </td>
           </tr>
         
@@ -528,12 +551,25 @@
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RONCAL CASANOVA DORIS
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Bioquímica / Microbiología</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5220</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1530</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">6750</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4947</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1014</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">5961</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">22.7%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">17.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> URIOL LARO MARIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4320</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1454</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">5774</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">25.2%</span>
             </td>
           </tr>
         
@@ -542,24 +578,11 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ESPARZA TAFUR PATRICIA
             </td>
             <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4860</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2340</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">7200</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">3369</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">920</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">4289</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">32.5%</span>
-            </td>
-          </tr>
-        
-          <tr class="hover:bg-sky-50/60 transition">
-            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SACHUN PLASENCIA MANUEL
-            </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4370</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2080</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">6450</td>
-            <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">32.2%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">21.5%</span>
             </td>
           </tr>
         
@@ -568,11 +591,11 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SALCEDO MALAVER LUIS
             </td>
             <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4280</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1930</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">6210</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2709</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">728</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">3437</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">31.1%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">21.2%</span>
             </td>
           </tr>
         
@@ -581,11 +604,11 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> FLORES RODRIGUEZ CARMEN
             </td>
             <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4120</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1770</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">5890</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2608</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">744</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">3352</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">30.1%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">22.2%</span>
             </td>
           </tr>
         
@@ -594,37 +617,271 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SILVA SANTIAGO ANA
             </td>
             <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">3980</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1690</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">5670</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2601</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">637</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">3238</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">29.8%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">19.7%</span>
             </td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RAMIREZ TORRES WALTER
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SACHUN PLASENCIA MANUEL
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Medicina Interna Hosp</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">1040</td>
-            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">570</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1610</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2538</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">691</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">3229</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">35.4%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">21.4%</span>
             </td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RODRIGUEZ PASTOR JULIO
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> VERA FAVERIO NATHALY
             </td>
-            <td class="py-3 px-4 text-slate-500 font-medium">Cirugía / Sala Operaciones</td>
-            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">9</td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2565</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">635</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">3200</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">19.8%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> GARCIA GARCIA PEDRO
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2050</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">603</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">2653</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">22.7%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> GUTIERREZ FLORES JOSE
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">1807</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">527</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">2334</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">22.6%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SANTIAGO RIOJA ORLANDO
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">1739</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">486</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">2225</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">21.8%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> GARCIA ROJAS ANTHONY
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Urgencias / Emergencia</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">1475</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">424</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1899</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">22.3%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> IBAÑEZ BURGOS EDILBERTO
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">573</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">433</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1006</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">43.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ROSALES OLANO JUAN
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">284</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">184</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">468</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">39.3%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SILVA DE SANCHEZ GISELLA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">322</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">146</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">468</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">31.2%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RONCAL CASANOVA DORIS
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">126</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">15</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">141</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">10.6%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> HERRERA LOPEZ CARMELA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">90</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">18</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">108</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">16.7%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> FERNANDEZ LOPEZ BERNY
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">79</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">13</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">92</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">14.1%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> BARRANTES MERCADO MARIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">68</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">24</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">92</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">26.1%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RUIZ MENDEZ ANGEL
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">60</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">20</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">80</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">25.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RODRIGUEZ ASCON FAVIOLA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">62</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">14</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">76</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">18.4%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> HONORIO ROSAS OSCAR
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">64</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">4</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">68</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">5.9%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> TELLO PRECIADO JUAN
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">6</td>
             <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2</td>
-            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">11</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">8</td>
             <td class="py-3 px-4 text-center">
-              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">18.2%</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">25.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> CONTRERAS TAPIA SELENE
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">0</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">2</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">0.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> VILLAR TEJADA PEDRO
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">0</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">100.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ALBURQUEQUE TELLO TONY
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">1</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">0</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">0.0%</span>
             </td>
           </tr>
         </tbody>
@@ -634,7 +891,7 @@
     </section>
 
     <!-- ==================== PESTAÑA 3: PRODUCCIÓN DE TECNÓLOGOS ==================== -->
-    <section id="tab-tecnologos" class="tab-content hidden space-y-6">
+    <section id="tab-tecnologos" class="tab-content space-y-6 hidden">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <div class="essalud-card p-5 rounded-2xl flex flex-col justify-between">
           <div>
@@ -712,7 +969,7 @@
             <span class="text-xs font-mono font-bold text-[#003876] bg-sky-50 border border-sky-200 px-3 py-1 rounded-lg" id="badgeTotalTec">Total TODAS LAS ÁREAS: 65.110 análisis</span>
           </div>
           <div class="h-72 w-full relative min-h-[260px]">
-            <canvas id="chartTecnologoMes" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+            <canvas id="chartTecnologoMes" height="288" style="display: block; box-sizing: border-box; height: 288px; width: 1351.5px;" width="1351"></canvas>
           </div>
         </div>
       </div>
@@ -726,19 +983,19 @@
           <span class="text-xs px-2.5 py-1 rounded bg-sky-100 text-[#003876] font-bold" id="badgeTotalAreaTec">Total TODAS LAS ÁREAS: 256.459</span>
         </div>
         <div class="h-96 w-full relative min-h-[350px]">
-          <canvas id="chartRankingTecnologos" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+          <canvas id="chartRankingTecnologos" height="384" style="display: block; box-sizing: border-box; height: 384px; width: 1824px;" width="1824"></canvas>
         </div>
       </div>
     </section>
 
     <!-- ==================== PESTAÑA 4: EXÁMENES Y ÁREAS ==================== -->
-    <section id="tab-examenes" class="tab-content hidden space-y-6">
+    <section id="tab-examenes" class="tab-content space-y-6">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="essalud-card p-5 rounded-2xl">
           <h3 class="text-base font-extrabold text-[#003876] mb-1">¿Qué Área de Laboratorio Produce Más?</h3>
           <p class="text-xs text-slate-500 mb-4" id="descShareAreas">Participación sobre el total analítico</p>
           <div class="h-64 w-full relative min-h-[220px]">
-            <canvas id="chartAreasShare" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+            <canvas id="chartAreasShare" height="256" style="display: block; box-sizing: border-box; height: 256px; width: 564px;" width="564"></canvas>
           </div>
           <div class="mt-4 space-y-2 text-xs" id="listaShareAreas">
         <div class="flex items-center justify-between py-1.5 border-b border-sky-100">
@@ -792,7 +1049,7 @@
             <span class="text-xs px-2.5 py-1 rounded bg-sky-50 text-[#003876] border border-sky-200 font-bold">Top Frecuencia</span>
           </div>
           <div class="h-72 w-full relative min-h-[260px]">
-            <canvas id="chartTopExamenes" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
+            <canvas id="chartTopExamenes" height="288" style="display: block; box-sizing: border-box; height: 288px; width: 1194px;" width="1194"></canvas>
           </div>
         </div>
       </div>
@@ -2157,19 +2414,20 @@
 
   </main>
 
-  <!-- ==================== LÓGICA Y DATOS ==================== -->
+  <!-- ==================== LÓGICA Y DATOS 100% SINCRONIZADOS ==================== -->
   <script>
     let MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Set","Oct"];
 
+    // 1. ÁREAS HOSPITALARIAS: MATRIZ CONSOLIDADA EXACTA AL 100% CON TU EXCEL
     let DATA_AREAS_ORIGEN = {
   "TODAS": {
     "nombre": "TODAS LAS ÁREAS",
     "total": 256459,
     "share": "100% Hospital",
-    "normales": 189574,
-    "patologicos": 66885,
-    "pctNormal": "73.9%",
-    "pctPatol": "26.1%",
+    "normales": 188038,
+    "patologicos": 68421,
+    "pctNormal": "73.3%",
+    "pctPatol": "26.7%",
     "mensualNormal": [
       13930,
       22822,
@@ -2180,7 +2438,7 @@
       22901,
       14894,
       14435,
-      15083
+      13537
     ],
     "mensualPatol": [
       5405,
@@ -2192,7 +2450,7 @@
       6825,
       6833,
       6836,
-      5308
+      6854
     ],
     "areasLab": [
       {
@@ -2230,40 +2488,40 @@
   "CONSULTA": {
     "nombre": "CONSULTA EXTERNA",
     "total": 209677,
-    "share": "81.95% del total",
-    "normales": 159728,
-    "patologicos": 50440,
-    "pctNormal": "76.0%",
-    "pctPatol": "24.0%",
+    "share": "81.76% del total",
+    "normales": 150961,
+    "patologicos": 58716,
+    "pctNormal": "72.0%",
+    "pctPatol": "28.0%",
     "mensualNormal": [
-      11757,
-      19910,
-      19695,
-      16115,
-      24910,
-      10246,
-      19122,
-      13039,
-      12792,
-      12142
+      10736,
+      19350,
+      19530,
+      16880,
+      22504,
+      9600,
+      19185,
+      11657,
+      11276,
+      10243
     ],
     "mensualPatol": [
-      3713,
-      6288,
-      6220,
-      5089,
-      7867,
-      3236,
-      6039,
-      4118,
-      4036,
-      3834
+      4734,
+      6848,
+      6385,
+      4324,
+      10273,
+      3882,
+      5976,
+      5500,
+      5552,
+      5242
     ],
     "areasLab": [
       {
         "nombre": "Bioquímica",
         "volumen": 154820,
-        "porcentaje": 73.7,
+        "porcentaje": 73.8,
         "color": "#00A9E0"
       },
       {
@@ -2280,8 +2538,8 @@
       },
       {
         "nombre": "Inmunología",
-        "volumen": 7198,
-        "porcentaje": 3.4,
+        "volumen": 6707,
+        "porcentaje": 3.2,
         "color": "#e11d48"
       }
     ]
@@ -2290,10 +2548,10 @@
     "nombre": "URGENCIAS / EMERGENCIA",
     "total": 43452,
     "share": "16.94% del total",
-    "normales": 35370,
-    "patologicos": 8082,
-    "pctNormal": "81.4%",
-    "pctPatol": "18.6%",
+    "normales": 34792,
+    "patologicos": 8660,
+    "pctNormal": "80.1%",
+    "pctPatol": "19.9%",
     "mensualNormal": [
       3006,
       3310,
@@ -2304,7 +2562,7 @@
       3512,
       3014,
       2925,
-      3610
+      3032
     ],
     "mensualPatol": [
       575,
@@ -2316,7 +2574,7 @@
       744,
       1216,
       1176,
-      824
+      1402
     ],
     "areasLab": [
       {
@@ -2354,58 +2612,58 @@
   "HOSPITALIZACION": {
     "nombre": "HOSPITALIZACIÓN",
     "total": 3318,
-    "share": "1.10% del total",
-    "normales": 1838,
-    "patologicos": 989,
-    "pctNormal": "65.0%",
-    "pctPatol": "35.0%",
+    "share": "1.29% del total",
+    "normales": 2276,
+    "patologicos": 1042,
+    "pctNormal": "68.6%",
+    "pctPatol": "31.4%",
     "mensualNormal": [
-      185,
-      150,
-      144,
-      393,
-      198,
-      145,
-      201,
-      216,
-      219,
-      218
+      188,
+      162,
+      168,
+      434,
+      227,
+      182,
+      204,
+      217,
+      232,
+      262
     ],
     "mensualPatol": [
-      99,
-      80,
+      96,
+      68,
+      53,
+      170,
       77,
-      211,
-      106,
-      78,
+      41,
+      105,
+      115,
       108,
-      116,
-      121,
-      118
+      209
     ],
     "areasLab": [
       {
         "nombre": "Bioquímica",
-        "volumen": 1484,
-        "porcentaje": 52.5,
+        "volumen": 1740,
+        "porcentaje": 52.4,
         "color": "#00A9E0"
       },
       {
         "nombre": "Hematología y Coagulación",
-        "volumen": 939,
+        "volumen": 1102,
         "porcentaje": 33.2,
         "color": "#003876"
       },
       {
         "nombre": "Inmunología",
-        "volumen": 299,
+        "volumen": 351,
         "porcentaje": 10.6,
         "color": "#e11d48"
       },
       {
         "nombre": "Microbiología",
         "volumen": 122,
-        "porcentaje": 4.3,
+        "porcentaje": 3.7,
         "color": "#0284c7"
       },
       {
@@ -2420,10 +2678,10 @@
     "nombre": "CENTRO QUIRÚRGICO",
     "total": 12,
     "share": "<0.01% del total",
-    "normales": 10,
-    "patologicos": 2,
-    "pctNormal": "83.3%",
-    "pctPatol": "16.7%",
+    "normales": 9,
+    "patologicos": 3,
+    "pctNormal": "75.0%",
+    "pctPatol": "25.0%",
     "mensualNormal": [
       0,
       0,
@@ -2434,7 +2692,7 @@
       0,
       6,
       2,
-      1
+      0
     ],
     "mensualPatol": [
       0,
@@ -2446,7 +2704,7 @@
       0,
       2,
       0,
-      0
+      1
     ],
     "areasLab": [
       {
@@ -2471,6 +2729,7 @@
   }
 };
 
+    // 2. MATRIZ EXACTA DE PRODUCCIÓN DE TECNÓLOGOS (10 OFICIALES)
     let PRODUCCION_TECNOLOGOS_POR_AREA = {
   "EMERGENCIA": [
     {
@@ -3398,6 +3657,7 @@
   ]
 };
 
+    // 3. EXÁMENES
     let EXAMENES_POR_AREA = {
   "CONSULTA": [
     {
@@ -11045,28 +11305,513 @@
     }
     calcularConsolidadoTodas();
 
-    let MEDICOS_DATA = [
-      { nombre: 'ALVA GUARNIZ HUGO', area: 'Bioquímica / Microbiología', normales: 9830, patologicos: 3120, total: 12950, servicio: 'CONSULTA' },
-      { nombre: 'SILVA DE SANCHEZ GISELLA', area: 'Bioquímica / Hematología', normales: 7800, patologicos: 2360, total: 10160, servicio: 'CONSULTA' },
-      { nombre: 'RIOS CARO MANUELA', area: 'Bioquímica / Hematología', normales: 6550, patologicos: 2030, total: 8580, servicio: 'CONSULTA' },
-      { nombre: 'GOICOCHEA RIOS EVELYN', area: 'Bioquímica / Hematología', normales: 5580, patologicos: 1780, total: 7360, servicio: 'CONSULTA' },
-      { nombre: 'LU GALARRETA LUCIA', area: 'Microbiología / Bioquímica', normales: 5530, patologicos: 1960, total: 7490, servicio: 'CONSULTA' },
-      { nombre: 'HERRERA ZAVALETA JAVIER', area: 'Bioquímica / Hematología', normales: 5230, patologicos: 1550, total: 6780, servicio: 'CONSULTA' },
-      { nombre: 'RONCAL CASANOVA DORIS', area: 'Bioquímica / Microbiología', normales: 5220, patologicos: 1530, total: 6750, servicio: 'CONSULTA' },
-      { nombre: 'ESPARZA TAFUR PATRICIA', area: 'Urgencias / Emergencia', normales: 4860, patologicos: 2340, total: 7200, servicio: 'EMERGENCIA' },
-      { nombre: 'SACHUN PLASENCIA MANUEL', area: 'Urgencias / Emergencia', normales: 4370, patologicos: 2080, total: 6450, servicio: 'EMERGENCIA' },
-      { nombre: 'SALCEDO MALAVER LUIS', area: 'Urgencias / Emergencia', normales: 4280, patologicos: 1930, total: 6210, servicio: 'EMERGENCIA' },
-      { nombre: 'FLORES RODRIGUEZ CARMEN', area: 'Urgencias / Emergencia', normales: 4120, patologicos: 1770, total: 5890, servicio: 'EMERGENCIA' },
-      { nombre: 'SILVA SANTIAGO ANA', area: 'Urgencias / Emergencia', normales: 3980, patologicos: 1690, total: 5670, servicio: 'EMERGENCIA' },
-      { nombre: 'RAMIREZ TORRES WALTER', area: 'Medicina Interna Hosp', normales: 1040, patologicos: 570, total: 1610, servicio: 'HOSPITALIZACION' },
-      { nombre: 'RODRIGUEZ PASTOR JULIO', area: 'Cirugía / Sala Operaciones', normales: 9, patologicos: 2, total: 11, servicio: 'CENTRO_QUIRURGICO' }
-    ];
+    // 4. DIRECTORIO SEGMENTADO Y REAL DE MÉDICOS POR CADA SERVICIO
+    let MEDICOS_POR_AREA = {
+  "CONSULTA": [
+    {
+      "nombre": "ALVA GUARNIZ HUGO",
+      "area": "Consulta Externa",
+      "normales": 9260,
+      "patologicos": 3458,
+      "total": 12718
+    },
+    {
+      "nombre": "SILVA DE SANCHEZ GISELLA",
+      "area": "Consulta Externa",
+      "normales": 7673,
+      "patologicos": 3612,
+      "total": 11285
+    },
+    {
+      "nombre": "RIOS CARO MANUELA",
+      "area": "Consulta Externa",
+      "normales": 6588,
+      "patologicos": 3052,
+      "total": 9640
+    },
+    {
+      "nombre": "GOICOCHEA RIOS EVELYN",
+      "area": "Consulta Externa",
+      "normales": 5381,
+      "patologicos": 3094,
+      "total": 8475
+    },
+    {
+      "nombre": "MIRANDA PLASENCIA MARITA",
+      "area": "Consulta Externa",
+      "normales": 5092,
+      "patologicos": 3038,
+      "total": 8130
+    },
+    {
+      "nombre": "HERRERA ZAVALETA JAVIER",
+      "area": "Consulta Externa",
+      "normales": 5181,
+      "patologicos": 2547,
+      "total": 7728
+    },
+    {
+      "nombre": "LU GALARRETA LUCIA",
+      "area": "Consulta Externa",
+      "normales": 5484,
+      "patologicos": 2081,
+      "total": 7565
+    },
+    {
+      "nombre": "ZAVALETA PAREDES SONNIA",
+      "area": "Consulta Externa",
+      "normales": 4780,
+      "patologicos": 2077,
+      "total": 6857
+    },
+    {
+      "nombre": "RONCAL CASANOVA DORIS",
+      "area": "Consulta Externa",
+      "normales": 4947,
+      "patologicos": 1014,
+      "total": 5961
+    },
+    {
+      "nombre": "URIOL LARO MARIA",
+      "area": "Consulta Externa",
+      "normales": 4320,
+      "patologicos": 1454,
+      "total": 5774
+    }
+  ],
+  "EMERGENCIA": [
+    {
+      "nombre": "ESPARZA TAFUR PATRICIA",
+      "area": "Urgencias / Emergencia",
+      "normales": 3369,
+      "patologicos": 920,
+      "total": 4289
+    },
+    {
+      "nombre": "SALCEDO MALAVER LUIS",
+      "area": "Urgencias / Emergencia",
+      "normales": 2709,
+      "patologicos": 728,
+      "total": 3437
+    },
+    {
+      "nombre": "FLORES RODRIGUEZ CARMEN",
+      "area": "Urgencias / Emergencia",
+      "normales": 2608,
+      "patologicos": 744,
+      "total": 3352
+    },
+    {
+      "nombre": "SILVA SANTIAGO ANA",
+      "area": "Urgencias / Emergencia",
+      "normales": 2601,
+      "patologicos": 637,
+      "total": 3238
+    },
+    {
+      "nombre": "SACHUN PLASENCIA MANUEL",
+      "area": "Urgencias / Emergencia",
+      "normales": 2538,
+      "patologicos": 691,
+      "total": 3229
+    },
+    {
+      "nombre": "VERA FAVERIO NATHALY",
+      "area": "Urgencias / Emergencia",
+      "normales": 2565,
+      "patologicos": 635,
+      "total": 3200
+    },
+    {
+      "nombre": "GARCIA GARCIA PEDRO",
+      "area": "Urgencias / Emergencia",
+      "normales": 2050,
+      "patologicos": 603,
+      "total": 2653
+    },
+    {
+      "nombre": "GUTIERREZ FLORES JOSE",
+      "area": "Urgencias / Emergencia",
+      "normales": 1807,
+      "patologicos": 527,
+      "total": 2334
+    },
+    {
+      "nombre": "SANTIAGO RIOJA ORLANDO",
+      "area": "Urgencias / Emergencia",
+      "normales": 1739,
+      "patologicos": 486,
+      "total": 2225
+    },
+    {
+      "nombre": "GARCIA ROJAS ANTHONY",
+      "area": "Urgencias / Emergencia",
+      "normales": 1475,
+      "patologicos": 424,
+      "total": 1899
+    }
+  ],
+  "HOSPITALIZACION": [
+    {
+      "nombre": "IBAÑEZ BURGOS EDILBERTO",
+      "area": "Hospitalización",
+      "normales": 573,
+      "patologicos": 433,
+      "total": 1006
+    },
+    {
+      "nombre": "ROSALES OLANO JUAN",
+      "area": "Hospitalización",
+      "normales": 284,
+      "patologicos": 184,
+      "total": 468
+    },
+    {
+      "nombre": "SILVA DE SANCHEZ GISELLA",
+      "area": "Hospitalización",
+      "normales": 322,
+      "patologicos": 146,
+      "total": 468
+    },
+    {
+      "nombre": "RONCAL CASANOVA DORIS",
+      "area": "Hospitalización",
+      "normales": 126,
+      "patologicos": 15,
+      "total": 141
+    },
+    {
+      "nombre": "HERRERA LOPEZ CARMELA",
+      "area": "Hospitalización",
+      "normales": 90,
+      "patologicos": 18,
+      "total": 108
+    },
+    {
+      "nombre": "FERNANDEZ LOPEZ BERNY",
+      "area": "Hospitalización",
+      "normales": 79,
+      "patologicos": 13,
+      "total": 92
+    },
+    {
+      "nombre": "BARRANTES MERCADO MARIA",
+      "area": "Hospitalización",
+      "normales": 68,
+      "patologicos": 24,
+      "total": 92
+    },
+    {
+      "nombre": "RUIZ MENDEZ ANGEL",
+      "area": "Hospitalización",
+      "normales": 60,
+      "patologicos": 20,
+      "total": 80
+    },
+    {
+      "nombre": "RODRIGUEZ ASCON FAVIOLA",
+      "area": "Hospitalización",
+      "normales": 62,
+      "patologicos": 14,
+      "total": 76
+    },
+    {
+      "nombre": "HONORIO ROSAS OSCAR",
+      "area": "Hospitalización",
+      "normales": 64,
+      "patologicos": 4,
+      "total": 68
+    }
+  ],
+  "CENTRO_QUIRURGICO": [
+    {
+      "nombre": "TELLO PRECIADO JUAN",
+      "area": "Centro Quirúrgico",
+      "normales": 6,
+      "patologicos": 2,
+      "total": 8
+    },
+    {
+      "nombre": "CONTRERAS TAPIA SELENE",
+      "area": "Centro Quirúrgico",
+      "normales": 2,
+      "patologicos": 0,
+      "total": 2
+    },
+    {
+      "nombre": "VILLAR TEJADA PEDRO",
+      "area": "Centro Quirúrgico",
+      "normales": 0,
+      "patologicos": 1,
+      "total": 1
+    },
+    {
+      "nombre": "ALBURQUEQUE TELLO TONY",
+      "area": "Centro Quirúrgico",
+      "normales": 1,
+      "patologicos": 0,
+      "total": 1
+    }
+  ],
+  "TODAS": [
+    {
+      "nombre": "ALVA GUARNIZ HUGO",
+      "area": "Consulta Externa",
+      "normales": 9260,
+      "patologicos": 3458,
+      "total": 12718
+    },
+    {
+      "nombre": "SILVA DE SANCHEZ GISELLA",
+      "area": "Consulta Externa",
+      "normales": 7673,
+      "patologicos": 3612,
+      "total": 11285
+    },
+    {
+      "nombre": "RIOS CARO MANUELA",
+      "area": "Consulta Externa",
+      "normales": 6588,
+      "patologicos": 3052,
+      "total": 9640
+    },
+    {
+      "nombre": "GOICOCHEA RIOS EVELYN",
+      "area": "Consulta Externa",
+      "normales": 5381,
+      "patologicos": 3094,
+      "total": 8475
+    },
+    {
+      "nombre": "MIRANDA PLASENCIA MARITA",
+      "area": "Consulta Externa",
+      "normales": 5092,
+      "patologicos": 3038,
+      "total": 8130
+    },
+    {
+      "nombre": "HERRERA ZAVALETA JAVIER",
+      "area": "Consulta Externa",
+      "normales": 5181,
+      "patologicos": 2547,
+      "total": 7728
+    },
+    {
+      "nombre": "LU GALARRETA LUCIA",
+      "area": "Consulta Externa",
+      "normales": 5484,
+      "patologicos": 2081,
+      "total": 7565
+    },
+    {
+      "nombre": "ZAVALETA PAREDES SONNIA",
+      "area": "Consulta Externa",
+      "normales": 4780,
+      "patologicos": 2077,
+      "total": 6857
+    },
+    {
+      "nombre": "RONCAL CASANOVA DORIS",
+      "area": "Consulta Externa",
+      "normales": 4947,
+      "patologicos": 1014,
+      "total": 5961
+    },
+    {
+      "nombre": "URIOL LARO MARIA",
+      "area": "Consulta Externa",
+      "normales": 4320,
+      "patologicos": 1454,
+      "total": 5774
+    },
+    {
+      "nombre": "ESPARZA TAFUR PATRICIA",
+      "area": "Urgencias / Emergencia",
+      "normales": 3369,
+      "patologicos": 920,
+      "total": 4289
+    },
+    {
+      "nombre": "SALCEDO MALAVER LUIS",
+      "area": "Urgencias / Emergencia",
+      "normales": 2709,
+      "patologicos": 728,
+      "total": 3437
+    },
+    {
+      "nombre": "FLORES RODRIGUEZ CARMEN",
+      "area": "Urgencias / Emergencia",
+      "normales": 2608,
+      "patologicos": 744,
+      "total": 3352
+    },
+    {
+      "nombre": "SILVA SANTIAGO ANA",
+      "area": "Urgencias / Emergencia",
+      "normales": 2601,
+      "patologicos": 637,
+      "total": 3238
+    },
+    {
+      "nombre": "SACHUN PLASENCIA MANUEL",
+      "area": "Urgencias / Emergencia",
+      "normales": 2538,
+      "patologicos": 691,
+      "total": 3229
+    },
+    {
+      "nombre": "VERA FAVERIO NATHALY",
+      "area": "Urgencias / Emergencia",
+      "normales": 2565,
+      "patologicos": 635,
+      "total": 3200
+    },
+    {
+      "nombre": "GARCIA GARCIA PEDRO",
+      "area": "Urgencias / Emergencia",
+      "normales": 2050,
+      "patologicos": 603,
+      "total": 2653
+    },
+    {
+      "nombre": "GUTIERREZ FLORES JOSE",
+      "area": "Urgencias / Emergencia",
+      "normales": 1807,
+      "patologicos": 527,
+      "total": 2334
+    },
+    {
+      "nombre": "SANTIAGO RIOJA ORLANDO",
+      "area": "Urgencias / Emergencia",
+      "normales": 1739,
+      "patologicos": 486,
+      "total": 2225
+    },
+    {
+      "nombre": "GARCIA ROJAS ANTHONY",
+      "area": "Urgencias / Emergencia",
+      "normales": 1475,
+      "patologicos": 424,
+      "total": 1899
+    },
+    {
+      "nombre": "IBAÑEZ BURGOS EDILBERTO",
+      "area": "Hospitalización",
+      "normales": 573,
+      "patologicos": 433,
+      "total": 1006
+    },
+    {
+      "nombre": "ROSALES OLANO JUAN",
+      "area": "Hospitalización",
+      "normales": 284,
+      "patologicos": 184,
+      "total": 468
+    },
+    {
+      "nombre": "SILVA DE SANCHEZ GISELLA",
+      "area": "Hospitalización",
+      "normales": 322,
+      "patologicos": 146,
+      "total": 468
+    },
+    {
+      "nombre": "RONCAL CASANOVA DORIS",
+      "area": "Hospitalización",
+      "normales": 126,
+      "patologicos": 15,
+      "total": 141
+    },
+    {
+      "nombre": "HERRERA LOPEZ CARMELA",
+      "area": "Hospitalización",
+      "normales": 90,
+      "patologicos": 18,
+      "total": 108
+    },
+    {
+      "nombre": "FERNANDEZ LOPEZ BERNY",
+      "area": "Hospitalización",
+      "normales": 79,
+      "patologicos": 13,
+      "total": 92
+    },
+    {
+      "nombre": "BARRANTES MERCADO MARIA",
+      "area": "Hospitalización",
+      "normales": 68,
+      "patologicos": 24,
+      "total": 92
+    },
+    {
+      "nombre": "RUIZ MENDEZ ANGEL",
+      "area": "Hospitalización",
+      "normales": 60,
+      "patologicos": 20,
+      "total": 80
+    },
+    {
+      "nombre": "RODRIGUEZ ASCON FAVIOLA",
+      "area": "Hospitalización",
+      "normales": 62,
+      "patologicos": 14,
+      "total": 76
+    },
+    {
+      "nombre": "HONORIO ROSAS OSCAR",
+      "area": "Hospitalización",
+      "normales": 64,
+      "patologicos": 4,
+      "total": 68
+    },
+    {
+      "nombre": "TELLO PRECIADO JUAN",
+      "area": "Centro Quirúrgico",
+      "normales": 6,
+      "patologicos": 2,
+      "total": 8
+    },
+    {
+      "nombre": "CONTRERAS TAPIA SELENE",
+      "area": "Centro Quirúrgico",
+      "normales": 2,
+      "patologicos": 0,
+      "total": 2
+    },
+    {
+      "nombre": "VILLAR TEJADA PEDRO",
+      "area": "Centro Quirúrgico",
+      "normales": 0,
+      "patologicos": 1,
+      "total": 1
+    },
+    {
+      "nombre": "ALBURQUEQUE TELLO TONY",
+      "area": "Centro Quirúrgico",
+      "normales": 1,
+      "patologicos": 0,
+      "total": 1
+    }
+  ]
+};
+
+    // Consolidado para TODAS
+    MEDICOS_POR_AREA.TODAS = [
+      ...MEDICOS_POR_AREA.CONSULTA,
+      ...MEDICOS_POR_AREA.EMERGENCIA,
+      ...MEDICOS_POR_AREA.HOSPITALIZACION,
+      ...MEDICOS_POR_AREA.CENTRO_QUIRURGICO
+    ].sort((a,b) => b.total - a.total);
 
     let areaActualClave = 'TODAS';
     let chartEvolucionInstance, chartDonutInstance, chartTopMedicosInstance, chartRankingTecInstance, chartTecMesInstance, chartAreasShareInstance, chartTopExamenesInstance;
 
     function getTecnologosPorArea(key) {
       return PRODUCCION_TECNOLOGOS_POR_AREA[key] || PRODUCCION_TECNOLOGOS_POR_AREA.TODAS;
+    }
+
+    function getMedicosPorArea(key) {
+      return MEDICOS_POR_AREA[key] || MEDICOS_POR_AREA.TODAS;
     }
 
     function seleccionarAreaGlobal(key) {
@@ -11248,7 +11993,7 @@
     }
 
     function initChartMedicos() {
-      const topMed = MEDICOS_DATA.slice(0, 8);
+      const topMed = getMedicosPorArea(areaActualClave).slice(0, 8);
       chartTopMedicosInstance = new Chart(document.getElementById('chartTopMedicos').getContext('2d'), {
         type: 'bar',
         data: {
@@ -11267,8 +12012,7 @@
     }
 
     function actualizarChartMedicosPorArea(key) {
-      let filtered = (key === 'TODAS') ? MEDICOS_DATA : MEDICOS_DATA.filter(m => m.servicio === key || key === 'TODAS');
-      if (filtered.length < 5) filtered = MEDICOS_DATA.slice(0, 6);
+      const filtered = getMedicosPorArea(key);
       const top = filtered.slice(0, 8);
 
       chartTopMedicosInstance.data.labels = top.map(m => m.nombre.split(' ')[0] + ' ' + (m.nombre.split(' ')[1] || ''));
@@ -11373,11 +12117,7 @@
     function renderMedicosTable() {
       const query = (document.getElementById('filtroMedicoInput').value || '').toLowerCase();
       const tbody = document.getElementById('tablaMedicosBody');
-
-      let source = (areaActualClave === 'TODAS') ? MEDICOS_DATA : MEDICOS_DATA.filter(m => m.servicio === areaActualClave || areaActualClave === 'TODAS');
-      if (source.length === 0) source = MEDICOS_DATA;
-
-      const filtered = source.filter(m => m.nombre.toLowerCase().includes(query) || m.area.toLowerCase().includes(query));
+      const filtered = getMedicosPorArea(areaActualClave).filter(m => m.nombre.toLowerCase().includes(query) || m.area.toLowerCase().includes(query));
 
       tbody.innerHTML = filtered.map(m => {
         const pctPatol = m.total > 0 ? ((m.patologicos / m.total) * 100).toFixed(1) : 0;
@@ -11529,6 +12269,7 @@
       `).join('');
     }
 
+    // CARGADOR INTEGRAL
     function cargarArchivoExcelDinamico(e) {
       const file = e.target.files[0];
       if (!file) return;
@@ -11544,6 +12285,7 @@
 
             const sheetNames = workbook.SheetNames;
             const findSheet = (pattern) => sheetNames.find(s => s.toUpperCase().includes(pattern));
+            
             const sheetLabName = findSheet('PRODUCCION_AREALAB') || findSheet('AREALAB');
 
             if (!sheetLabName) {
@@ -11554,6 +12296,7 @@
             const wsLab = workbook.Sheets[sheetLabName];
             const jsonLab = XLSX.utils.sheet_to_json(wsLab, { header: 1 });
 
+            // Detectar meses
             let headerIdx = jsonLab.findIndex(r => r && r.some(c => String(c).trim() === 'Ene'));
             if (headerIdx !== -1) {
               const hRow = jsonLab[headerIdx];
@@ -11572,6 +12315,7 @@
               }
             }
 
+            // Parseo de exámenes
             const nuevasAreasExamenes = { 'CONSULTA': [], 'EMERGENCIA': [], 'HOSPITALIZACION': [], 'CENTRO_QUIRURGICO': [] };
             let secActual = null;
             let espActual = 'BIOQUIMICA';
@@ -11614,31 +12358,10 @@
             if (nuevasAreasExamenes.CONSULTA.length > 0 || nuevasAreasExamenes.EMERGENCIA.length > 0) {
               EXAMENES_POR_AREA = nuevasAreasExamenes;
               calcularConsolidadoTodas();
-
-              const totalConsulta = nuevasAreasExamenes.CONSULTA.reduce((a,b)=>a+b.t, 0) || DATA_AREAS_ORIGEN.CONSULTA.total;
-              const totalEmergencia = nuevasAreasExamenes.EMERGENCIA.reduce((a,b)=>a+b.t, 0) || DATA_AREAS_ORIGEN.EMERGENCIA.total;
-              const totalHosp = nuevasAreasExamenes.HOSPITALIZACION.reduce((a,b)=>a+b.t, 0) || DATA_AREAS_ORIGEN.HOSPITALIZACION.total;
-              const totalCQ = nuevasAreasExamenes.CENTRO_QUIRURGICO.reduce((a,b)=>a+b.t, 0) || DATA_AREAS_ORIGEN.CENTRO_QUIRURGICO.total;
-              const granTotal = totalConsulta + totalEmergencia + totalHosp + totalCQ;
-
-              DATA_AREAS_ORIGEN.TODAS.total = granTotal;
-              DATA_AREAS_ORIGEN.TODAS.normales = Math.round(granTotal * 0.7392);
-              DATA_AREAS_ORIGEN.TODAS.patologicos = granTotal - DATA_AREAS_ORIGEN.TODAS.normales;
-
-              DATA_AREAS_ORIGEN.CONSULTA.total = totalConsulta;
-              DATA_AREAS_ORIGEN.EMERGENCIA.total = totalEmergencia;
-              DATA_AREAS_ORIGEN.HOSPITALIZACION.total = totalHosp;
-              DATA_AREAS_ORIGEN.CENTRO_QUIRURGICO.total = totalCQ;
-
-              document.getElementById('btnTxtTodas').innerText = granTotal.toLocaleString();
-              document.getElementById('btnTxtConsulta').innerText = (totalConsulta/1000).toFixed(0) + 'k';
-              document.getElementById('btnTxtEmergencia').innerText = (totalEmergencia/1000).toFixed(1) + 'k';
-              document.getElementById('btnTxtHosp').innerText = (totalHosp/1000).toFixed(1) + 'k';
-              document.getElementById('btnTxtCQ').innerText = totalCQ;
             }
 
             seleccionarAreaGlobal(areaActualClave);
-            alert(`¡Base de datos cargada con éxito! Periodo: Ene - ${MONTHS[MONTHS.length - 1]}.\n\nAhora presiona el botón azul "Guardar Web para GitHub" para descargar la versión limpia.`);
+            alert(`¡Base de datos cargada y sincronizada al 100%!\n\nPeriodo: Ene - ${MONTHS[MONTHS.length - 1]}.\nPresiona el botón azul "Guardar Web para GitHub" para descargar el index.html corregido.`);
 
           } catch (err) {
             console.error(err);
@@ -11651,31 +12374,29 @@
       reader.readAsArrayBuffer(file);
     }
 
-    // EXPORTADOR NATIVO QUE QUITA LOS BOTONES TÉCNICOS PARA LA VERSIÓN FINAL
+    // EXPORTADOR NATIVO: RETIRA LOS BOTONES TÉCNICOS PARA LA VERSIÓN WEB FINAL
     function descargarHTMLActualizado() {
-      // Tomamos el código completo de la página
       let htmlContent = document.documentElement.outerHTML;
 
-      // Inyectar las variables con los datos actualizados
       const jsonMonths = JSON.stringify(MONTHS);
       const jsonAreas = JSON.stringify(DATA_AREAS_ORIGEN, null, 2);
       const jsonTecs = JSON.stringify(PRODUCCION_TECNOLOGOS_POR_AREA, null, 2);
       const jsonExams = JSON.stringify(EXAMENES_POR_AREA, null, 2);
+      const jsonMeds = JSON.stringify(MEDICOS_POR_AREA, null, 2);
 
       htmlContent = htmlContent.replace(/let MONTHS = \[.*?\];/s, `let MONTHS = ${jsonMonths};`);
       htmlContent = htmlContent.replace(/let DATA_AREAS_ORIGEN = \{.*?\n    \};/s, `let DATA_AREAS_ORIGEN = ${jsonAreas};`);
       htmlContent = htmlContent.replace(/let PRODUCCION_TECNOLOGOS_POR_AREA = \{.*?\n    \};/s, `let PRODUCCION_TECNOLOGOS_POR_AREA = ${jsonTecs};`);
       htmlContent = htmlContent.replace(/let EXAMENES_POR_AREA = \{.*?\n    \};/s, `let EXAMENES_POR_AREA = ${jsonExams};`);
+      htmlContent = htmlContent.replace(/let MEDICOS_POR_AREA = \{.*?\n    \};/s, `let MEDICOS_POR_AREA = ${jsonMeds};`);
 
-      // Eliminar el input file y los botones de carga y exportación para la versión web
+      // Eliminar botones técnicos para los usuarios finales
       htmlContent = htmlContent.replace(/<input type="file" id="excelFileInput".*?>/s, '');
       htmlContent = htmlContent.replace(/<button id="btnCargarExcel".*?<\/button>/s, '');
       htmlContent = htmlContent.replace(/<button onclick="descargarHTMLActualizado\(\)".*?<\/button>/s, '');
 
-      // Asegurar que el modal inicie oculto
       htmlContent = htmlContent.replace('id="loadingOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center"', 'id="loadingOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center"');
 
-      // Descargar como index.html limpio
       const blob = new Blob(["<!DOCTYPE html>\n" + htmlContent], { type: "text/html;charset=utf-8" });
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
@@ -11685,7 +12406,7 @@
       document.body.removeChild(link);
       URL.revokeObjectURL(link.href);
 
-      alert("¡Archivo 'index.html' descargado con éxito!\n\nEste archivo está 100% limpio (sin botones de carga ni exportación), listo para subirlo a GitHub.");
+      alert("¡Archivo 'index.html' descargado con éxito!\n\nEste archivo tiene todas las cifras exactas y balanceadas, listo para subir a GitHub.");
     }
 
     // INICIALIZACIÓN
