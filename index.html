@@ -59,11 +59,11 @@
 
     <!-- Menú de Pestañas -->
     <nav class="flex items-center gap-1.5 bg-[#002855] p-1.5 rounded-xl border border-sky-800 overflow-x-auto max-w-full">
-      <button onclick="switchTab('resumen')" id="btn-tab-resumen" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-2 transition-all whitespace-nowrap text-sky-200">
+      <button onclick="switchTab('resumen')" id="btn-tab-resumen" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-2 transition-all whitespace-nowrap bg-[#00A9E0] text-white shadow">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard w-4 h-4"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
         <span>Resumen General</span>
       </button>
-      <button onclick="switchTab('solicitudes')" id="btn-tab-solicitudes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all hover:text-white whitespace-nowrap bg-[#00A9E0] text-white shadow">
+      <button onclick="switchTab('solicitudes')" id="btn-tab-solicitudes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all text-sky-200 hover:text-white whitespace-nowrap">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="file-check-2" aria-hidden="true" class="lucide lucide-file-check-2 w-4 h-4"><path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="m14 20 2 2 4-4"></path></svg>
         <span>Solicitudes y Médicos</span>
       </button>
@@ -100,19 +100,19 @@
       </div>
       <div>
         <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">ÁREA / SERVICIO GENERADOR:</span>
-        <span class="text-xs font-black text-[#003876] ml-1.5 px-2 py-0.5 rounded bg-sky-50 border border-sky-200 font-mono" id="labelAreaActivaGlobal">URGENCIAS / EMERGENCIA</span>
+        <span class="text-xs font-black text-[#003876] ml-1.5 px-2 py-0.5 rounded bg-sky-50 border border-sky-200 font-mono" id="labelAreaActivaGlobal">TODAS LAS ÁREAS</span>
       </div>
     </div>
 
     <!-- Botonera de Segmentación Activa -->
     <div class="flex flex-wrap items-center gap-1.5 bg-[#f0f7fd] p-1 rounded-xl border border-sky-200 overflow-x-auto" id="btnGroupAreas">
-      <button onclick="seleccionarAreaGlobal('TODAS')" id="btn-area-TODAS" class="area-btn px-3.5 py-1.5 text-xs rounded-lg transition-all whitespace-nowrap text-[#003876] font-semibold">
+      <button onclick="seleccionarAreaGlobal('TODAS')" id="btn-area-TODAS" class="area-btn px-3.5 py-1.5 text-xs rounded-lg transition-all whitespace-nowrap bg-[#003876] text-white shadow-sm font-bold">
         TODAS (<span id="btnTxtTodas">256,459</span>)
       </button>
-      <button onclick="seleccionarAreaGlobal('CONSULTA')" id="btn-area-CONSULTA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg text-[#003876] hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap font-semibold">
+      <button onclick="seleccionarAreaGlobal('CONSULTA')" id="btn-area-CONSULTA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap text-[#003876] font-semibold">
         CONSULTA EXTERNA (<span id="btnTxtConsulta">210k</span>)
       </button>
-      <button onclick="seleccionarAreaGlobal('EMERGENCIA')" id="btn-area-EMERGENCIA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap bg-[#003876] text-white shadow-sm font-bold">
+      <button onclick="seleccionarAreaGlobal('EMERGENCIA')" id="btn-area-EMERGENCIA" class="area-btn px-3.5 py-1.5 text-xs rounded-lg text-[#003876] hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap font-semibold">
         URGENCIAS / EMERGENCIA (<span id="btnTxtEmergencia">43.5k</span>)
       </button>
       <button onclick="seleccionarAreaGlobal('HOSPITALIZACION')" id="btn-area-HOSPITALIZACION" class="area-btn px-3.5 py-1.5 text-xs rounded-lg text-[#003876] hover:text-[#00A9E0] hover:bg-white transition-all whitespace-nowrap font-semibold">
@@ -128,7 +128,7 @@
   <main class="flex-1 overflow-y-auto custom-scroll p-4 md:p-6 space-y-6">
 
     <!-- ==================== PESTAÑA 1: RESUMEN GENERAL ==================== -->
-    <section id="tab-resumen" class="tab-content space-y-6 hidden">
+    <section id="tab-resumen" class="tab-content space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="essalud-card p-5 rounded-2xl relative overflow-hidden group hover:border-[#00A9E0] transition-all">
           <div class="flex items-center justify-between">
@@ -136,10 +136,10 @@
             <div class="p-2 rounded-xl bg-sky-50 text-[#003876]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers" aria-hidden="true" class="lucide lucide-layers w-5 h-5"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg></div>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <h2 class="text-3xl font-black text-[#003876]" id="kpiTotalSolicitudes">43.452</h2>
-            <span class="text-xs font-mono font-bold text-[#00A9E0]" id="kpiShareArea">16.94% del total</span>
+            <h2 class="text-3xl font-black text-[#003876]" id="kpiTotalSolicitudes">256.459</h2>
+            <span class="text-xs font-mono font-bold text-[#00A9E0]" id="kpiShareArea">100% Hospital</span>
           </div>
-          <p class="text-xs text-slate-500 mt-1" id="kpiSubAreaDesc">URGENCIAS / EMERGENCIA</p>
+          <p class="text-xs text-slate-500 mt-1" id="kpiSubAreaDesc">TODAS LAS ÁREAS</p>
           <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-[#00A9E0]"></div>
         </div>
 
@@ -149,8 +149,8 @@
             <div class="p-2 rounded-xl bg-emerald-50 text-emerald-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart-pulse" aria-hidden="true" class="lucide lucide-heart-pulse w-5 h-5"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></div>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <h2 class="text-3xl font-black text-emerald-600" id="kpiTotalNormal">34.792</h2>
-            <span class="text-xs font-black px-2 py-0.5 rounded bg-emerald-100 text-emerald-800" id="kpiPctNormal">80.1%</span>
+            <h2 class="text-3xl font-black text-emerald-600" id="kpiTotalNormal">188.038</h2>
+            <span class="text-xs font-black px-2 py-0.5 rounded bg-emerald-100 text-emerald-800" id="kpiPctNormal">73.3%</span>
           </div>
           <p class="text-xs text-slate-500 mt-1">Pacientes en rangos biológicos estándar</p>
           <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-emerald-500"></div>
@@ -162,8 +162,8 @@
             <div class="p-2 rounded-xl bg-rose-50 text-rose-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="alert-triangle" aria-hidden="true" class="lucide lucide-alert-triangle w-5 h-5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <h2 class="text-3xl font-black text-rose-600" id="kpiTotalPatol">8660</h2>
-            <span class="text-xs font-black px-2 py-0.5 rounded bg-rose-100 text-rose-800" id="kpiPctPatol">19.9%</span>
+            <h2 class="text-3xl font-black text-rose-600" id="kpiTotalPatol">68.421</h2>
+            <span class="text-xs font-black px-2 py-0.5 rounded bg-rose-100 text-rose-800" id="kpiPctPatol">26.7%</span>
           </div>
           <p class="text-xs text-slate-500 mt-1">Valores alterados o críticos detectados</p>
           <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-rose-500"></div>
@@ -188,7 +188,7 @@
         <div class="essalud-card p-5 rounded-2xl lg:col-span-2">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
             <div>
-              <h3 class="text-base font-extrabold text-[#003876]" id="tituloCurvaMensual">Evolución de Demanda Mensual: URGENCIAS / EMERGENCIA</h3>
+              <h3 class="text-base font-extrabold text-[#003876]" id="tituloCurvaMensual">Evolución de Demanda Mensual: TODAS LAS ÁREAS</h3>
               <p class="text-xs text-slate-500">Curva mensual comparando diagnósticos normales frente a alterados</p>
             </div>
             <div class="flex items-center gap-3 text-xs">
@@ -203,23 +203,23 @@
 
         <div class="essalud-card p-5 rounded-2xl flex flex-col">
           <h3 class="text-base font-extrabold text-[#003876] mb-1" id="tituloDonut">Distribución Diagnóstica</h3>
-          <p class="text-xs text-slate-500 mb-4" id="subtituloDonut">Proporción diagnóstica en URGENCIAS / EMERGENCIA</p>
+          <p class="text-xs text-slate-500 mb-4" id="subtituloDonut">Proporción diagnóstica en TODAS LAS ÁREAS</p>
           <div class="flex-1 flex items-center justify-center relative min-h-[220px]">
             <div class="h-56 w-56">
               <canvas id="chartDonutDiagnostico" width="224" height="224" style="display: block; box-sizing: border-box; height: 224px; width: 224px;"></canvas>
             </div>
             <div class="absolute text-center pointer-events-none">
-              <span class="text-2xl font-black text-[#003876]" id="donutCenterTotal">43K</span>
+              <span class="text-2xl font-black text-[#003876]" id="donutCenterTotal">256K</span>
               <p class="text-[10px] text-slate-500 uppercase font-black">Total Área</p>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-sky-100 text-xs">
             <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
-              <span class="text-emerald-700 font-black block text-sm" id="boxDonutNormal">80.1%</span>
+              <span class="text-emerald-700 font-black block text-sm" id="boxDonutNormal">73.3%</span>
               <span class="text-slate-600 text-[11px] font-semibold">Normales</span>
             </div>
             <div class="p-2.5 rounded-xl bg-rose-50 border border-rose-200 text-center">
-              <span class="text-rose-700 font-black block text-sm" id="boxDonutPatol">19.9%</span>
+              <span class="text-rose-700 font-black block text-sm" id="boxDonutPatol">26.7%</span>
               <span class="text-slate-600 text-[11px] font-semibold">Patológicos</span>
             </div>
           </div>
@@ -230,10 +230,10 @@
       <div class="essalud-card p-5 rounded-2xl">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
-            <h3 class="text-base font-extrabold text-[#003876]" id="tituloTablaMensualResumen">Total de Solicitudes Procesadas con Resultados por Mes: URGENCIAS / EMERGENCIA</h3>
+            <h3 class="text-base font-extrabold text-[#003876]" id="tituloTablaMensualResumen">Total de Solicitudes Procesadas con Resultados por Mes: TODAS LAS ÁREAS</h3>
             <p class="text-xs text-slate-500" id="subtituloTablaMensualResumen">Consolidado cronológico de solicitudes normales, patológicas y total procesado</p>
           </div>
-          <span class="text-xs px-2.5 py-1 rounded bg-sky-100 text-[#003876] font-bold" id="badgeTotalResumenTabla">Total URGENCIAS / EMERGENCIA: 43.452</span>
+          <span class="text-xs px-2.5 py-1 rounded bg-sky-100 text-[#003876] font-bold" id="badgeTotalResumenTabla">Total TODAS LAS ÁREAS: 256.459</span>
         </div>
 
         <div class="overflow-x-auto custom-scroll rounded-xl border border-sky-100">
@@ -250,29 +250,29 @@
           <td class="py-2.5 px-4 font-bold text-emerald-800 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> NORMAL (Valores estándar)
           </td>
-          <td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3006</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3310</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3017</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">6636</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3122</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3218</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3512</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3014</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">2925</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">3032</td>
-          <td class="py-2.5 px-4 text-right font-mono font-black text-emerald-800 bg-sky-50/80">34.792</td>
+          <td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.930</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.822</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.715</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">23.950</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">25.853</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.001</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">22.901</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">14.894</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">14.435</td><td class="py-2.5 px-2 text-right font-mono text-emerald-700 font-semibold">13.537</td>
+          <td class="py-2.5 px-4 text-right font-mono font-black text-emerald-800 bg-sky-50/80">188.038</td>
         </tr>
         <tr class="hover:bg-sky-50/50 transition">
           <td class="py-2.5 px-4 font-bold text-rose-800 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> PATOLÓGICO (Valores alterados)
           </td>
-          <td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">575</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">492</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">593</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">1166</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">652</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">644</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">744</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">1216</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">1176</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">1402</td>
-          <td class="py-2.5 px-4 text-right font-mono font-black text-rose-800 bg-sky-50/80">8660</td>
+          <td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">5405</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">7408</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">7031</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">5660</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">11.002</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">4567</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6825</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6833</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6836</td><td class="py-2.5 px-2 text-right font-mono text-rose-700 font-semibold">6854</td>
+          <td class="py-2.5 px-4 text-right font-mono font-black text-rose-800 bg-sky-50/80">68.421</td>
         </tr>
         <tr class="bg-sky-50/80 font-black text-[#003876] border-t-2 border-sky-200">
           <td class="py-3 px-4 font-black uppercase tracking-wider text-xs flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-check" aria-hidden="true" class="lucide lucide-check-check w-4 h-4 text-[#00A9E0]"><path d="M18 6 7 17l-5-5"></path><path d="m22 10-7.5 7.5L13 16"></path></svg> TOTAL SOLICITUDES CON RESULTADO
           </td>
-          <td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">3581</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">3802</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">3610</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">7802</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">3774</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">3862</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">4256</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">4230</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">4101</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">4434</td>
-          <td class="py-3 px-4 text-right font-mono font-black text-sm text-[#003876] bg-[#00A9E0]/15">43.452</td>
+          <td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">19.335</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">30.230</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">29.746</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">29.610</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">36.855</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">17.568</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">29.726</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">21.727</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">21.271</td><td class="py-2.5 px-2 text-right font-mono font-black text-[#003876] bg-sky-50/50">20.391</td>
+          <td class="py-3 px-4 text-right font-mono font-black text-sm text-[#003876] bg-[#00A9E0]/15">256.459</td>
         </tr>
         <tr class="bg-slate-50 text-slate-600 font-semibold border-t border-sky-100">
           <td class="py-2 px-4 text-[11px] uppercase tracking-wider text-slate-500">
             % Tasa de Morbilidad Patológica
           </td>
-          <td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">16.1%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">12.9%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">16.4%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">14.9%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">17.3%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">16.7%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">17.5%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">28.7%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">28.7%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">31.6%</td>
-          <td class="py-2 px-4 text-right font-mono font-bold text-[11px] text-rose-700 bg-slate-100">19.9%</td>
+          <td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">28.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">24.5%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">23.6%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">19.1%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">29.9%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">26.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">23.0%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">31.4%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">32.1%</td><td class="py-2.5 px-2 text-right font-mono text-slate-500 text-[11px] font-bold">33.6%</td>
+          <td class="py-2 px-4 text-right font-mono font-bold text-[11px] text-rose-700 bg-slate-100">26.7%</td>
         </tr>
       </tbody>
           </table>
@@ -282,7 +282,7 @@
       <!-- Resumen por Especialidades -->
       <div class="essalud-card p-5 rounded-2xl">
         <h3 class="text-base font-extrabold text-[#003876] mb-1">Volumen Procesado por Especialidades de Laboratorio</h3>
-        <p class="text-xs text-slate-500 mb-4">Distribución de las solicitudes derivadas a cada servicio técnico</p>
+        <p class="text-xs text-slate-500 mb-4">Distribución exacta según registros oficiales de área técnica</p>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="cards-areas-dist">
         <div class="p-4 rounded-xl bg-white border border-sky-100 flex flex-col justify-between hover:border-[#00A9E0] transition shadow-xs">
           <div class="flex items-center justify-between">
@@ -290,10 +290,10 @@
             <div class="w-2.5 h-2.5 rounded-full" style="background-color: #00A9E0"></div>
           </div>
           <div class="mt-3">
-            <h4 class="text-xl font-black text-[#003876]">23.350</h4>
+            <h4 class="text-xl font-black text-[#003876]">179.530</h4>
             <div class="flex items-center justify-between text-xs text-slate-500 mt-1 font-semibold">
-              <span>Procesadas</span>
-              <span class="font-bold text-[#00A9E0]">53.7%</span>
+              <span>Pacientes</span>
+              <span class="font-bold text-[#00A9E0]">70%</span>
             </div>
           </div>
         </div>
@@ -304,10 +304,10 @@
             <div class="w-2.5 h-2.5 rounded-full" style="background-color: #003876"></div>
           </div>
           <div class="mt-3">
-            <h4 class="text-xl font-black text-[#003876]">13.450</h4>
+            <h4 class="text-xl font-black text-[#003876]">43.770</h4>
             <div class="flex items-center justify-between text-xs text-slate-500 mt-1 font-semibold">
-              <span>Procesadas</span>
-              <span class="font-bold text-[#00A9E0]">31%</span>
+              <span>Pacientes</span>
+              <span class="font-bold text-[#00A9E0]">17.1%</span>
             </div>
           </div>
         </div>
@@ -318,10 +318,10 @@
             <div class="w-2.5 h-2.5 rounded-full" style="background-color: #0284c7"></div>
           </div>
           <div class="mt-3">
-            <h4 class="text-xl font-black text-[#003876]">5300</h4>
+            <h4 class="text-xl font-black text-[#003876]">20.830</h4>
             <div class="flex items-center justify-between text-xs text-slate-500 mt-1 font-semibold">
-              <span>Procesadas</span>
-              <span class="font-bold text-[#00A9E0]">12.2%</span>
+              <span>Pacientes</span>
+              <span class="font-bold text-[#00A9E0]">8.1%</span>
             </div>
           </div>
         </div>
@@ -332,10 +332,10 @@
             <div class="w-2.5 h-2.5 rounded-full" style="background-color: #e11d48"></div>
           </div>
           <div class="mt-3">
-            <h4 class="text-xl font-black text-[#003876]">1338</h4>
+            <h4 class="text-xl font-black text-[#003876]">10.120</h4>
             <div class="flex items-center justify-between text-xs text-slate-500 mt-1 font-semibold">
-              <span>Procesadas</span>
-              <span class="font-bold text-[#00A9E0]">3.1%</span>
+              <span>Pacientes</span>
+              <span class="font-bold text-[#00A9E0]">3.9%</span>
             </div>
           </div>
         </div>
@@ -346,10 +346,10 @@
             <div class="w-2.5 h-2.5 rounded-full" style="background-color: #f59e0b"></div>
           </div>
           <div class="mt-3">
-            <h4 class="text-xl font-black text-[#003876]">14</h4>
+            <h4 class="text-xl font-black text-[#003876]">2209</h4>
             <div class="flex items-center justify-between text-xs text-slate-500 mt-1 font-semibold">
-              <span>Procesadas</span>
-              <span class="font-bold text-[#00A9E0]">0.03%</span>
+              <span>Pacientes</span>
+              <span class="font-bold text-[#00A9E0]">0.9%</span>
             </div>
           </div>
         </div>
@@ -364,28 +364,28 @@
           <div>
             <div class="flex items-center justify-between">
               <h3 class="text-base font-extrabold text-[#003876]">Comportamiento Diagnóstico</h3>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-100 font-bold text-[#003876]" id="badgeSolArea">URGENCIAS / EMERGENCIA</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-100 font-bold text-[#003876]" id="badgeSolArea">TODAS LAS ÁREAS</span>
             </div>
             <p class="text-xs text-slate-500 mt-1">Detección de patologías en las órdenes emitidas</p>
 
             <div class="mt-6 space-y-4">
               <div>
                 <div class="flex justify-between text-xs font-bold mb-1">
-                  <span class="text-emerald-700">NORMALES (<span id="txtSolNormales">34.792</span>)</span>
-                  <span class="text-slate-800 font-black" id="pctSolNormales">80.1%</span>
+                  <span class="text-emerald-700">NORMALES (<span id="txtSolNormales">188.038</span>)</span>
+                  <span class="text-slate-800 font-black" id="pctSolNormales">73.3%</span>
                 </div>
                 <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
-                  <div class="bg-emerald-500 h-3 rounded-full" id="barSolNormal" style="width: 80.1%;"></div>
+                  <div class="bg-emerald-500 h-3 rounded-full" id="barSolNormal" style="width: 73.3%;"></div>
                 </div>
               </div>
 
               <div>
                 <div class="flex justify-between text-xs font-bold mb-1">
-                  <span class="text-rose-700">PATOLÓGICOS (<span id="txtSolPatol">8660</span>)</span>
-                  <span class="text-slate-800 font-black" id="pctSolPatol">19.9%</span>
+                  <span class="text-rose-700">PATOLÓGICOS (<span id="txtSolPatol">68.421</span>)</span>
+                  <span class="text-slate-800 font-black" id="pctSolPatol">26.7%</span>
                 </div>
                 <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
-                  <div class="bg-rose-500 h-3 rounded-full" id="barSolPatol" style="width: 19.9%;"></div>
+                  <div class="bg-rose-500 h-3 rounded-full" id="barSolPatol" style="width: 26.7%;"></div>
                 </div>
               </div>
             </div>
@@ -400,7 +400,7 @@
 
           <div class="pt-4 border-t border-sky-100 mt-6">
             <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider">Aporte al Total General</span>
-            <p class="text-sm font-black text-[#003876] mt-0.5" id="txtAporteAreaDesc">16.94% del total hospitalaria (43.452 pruebas)</p>
+            <p class="text-sm font-black text-[#003876] mt-0.5" id="txtAporteAreaDesc">100% Hospital hospitalaria (256.459 pruebas)</p>
           </div>
         </div>
 
@@ -408,12 +408,12 @@
           <div class="flex items-center justify-between mb-4">
             <div>
               <h3 class="text-base font-extrabold text-[#003876]">Top Médicos con Mayor Volumen de Órdenes</h3>
-              <p class="text-xs text-slate-500" id="subtituloTopMed">Médicos con mayor volumen en URGENCIAS / EMERGENCIA</p>
+              <p class="text-xs text-slate-500" id="subtituloTopMed">Médicos con mayor volumen en TODAS LAS ÁREAS</p>
             </div>
             <span class="text-xs px-2.5 py-1 rounded bg-sky-50 text-[#003876] border border-sky-200 font-black">Top Facultativos</span>
           </div>
           <div class="h-72 w-full relative min-h-[260px]">
-            <canvas id="chartTopMedicos" height="288" style="display: block; box-sizing: border-box; height: 288px; width: 1194px;" width="1194"></canvas>
+            <canvas id="chartTopMedicos" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
           </div>
         </div>
       </div>
@@ -443,6 +443,136 @@
               </tr>
             </thead>
             <tbody id="tablaMedicosBody" class="divide-y divide-sky-100 font-medium">
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ALVA GUARNIZ HUGO
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">9260</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3458</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">12.718</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">27.2%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SILVA DE SANCHEZ GISELLA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">7673</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3612</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">11.285</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">32.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RIOS CARO MANUELA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">6588</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3052</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">9640</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">31.7%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> GOICOCHEA RIOS EVELYN
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5381</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3094</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">8475</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">36.5%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> MIRANDA PLASENCIA MARITA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5092</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">3038</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">8130</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">37.4%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> HERRERA ZAVALETA JAVIER
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5181</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2547</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">7728</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">33.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> LU GALARRETA LUCIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">5484</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2081</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">7565</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">27.5%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ZAVALETA PAREDES SONNIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4780</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2077</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">6857</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">30.3%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RONCAL CASANOVA DORIS
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4947</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1014</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">5961</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">17.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> URIOL LARO MARIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Consulta Externa</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">4320</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1454</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">5774</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">25.2%</span>
+            </td>
+          </tr>
+        
           <tr class="hover:bg-sky-50/60 transition">
             <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ESPARZA TAFUR PATRICIA
@@ -572,6 +702,188 @@
               <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">22.3%</span>
             </td>
           </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> IBAÑEZ BURGOS EDILBERTO
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">573</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">433</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1006</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">43.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ROSALES OLANO JUAN
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">284</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">184</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">468</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">39.3%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> SILVA DE SANCHEZ GISELLA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">322</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">146</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">468</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">31.2%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RONCAL CASANOVA DORIS
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">126</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">15</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">141</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">10.6%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> HERRERA LOPEZ CARMELA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">90</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">18</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">108</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">16.7%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> FERNANDEZ LOPEZ BERNY
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">79</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">13</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">92</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">14.1%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> BARRANTES MERCADO MARIA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">68</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">24</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">92</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">26.1%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RUIZ MENDEZ ANGEL
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">60</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">20</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">80</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">25.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> RODRIGUEZ ASCON FAVIOLA
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">62</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">14</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">76</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">18.4%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> HONORIO ROSAS OSCAR
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Hospitalización</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">64</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">4</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">68</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">5.9%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> TELLO PRECIADO JUAN
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">6</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">2</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">8</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">25.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> CONTRERAS TAPIA SELENE
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">2</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">0</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">2</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">0.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> VILLAR TEJADA PEDRO
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">0</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">1</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">100.0%</span>
+            </td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-3 px-4 font-bold text-[#003876] flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-3.5 h-3.5 text-[#00A9E0]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> ALBURQUEQUE TELLO TONY
+            </td>
+            <td class="py-3 px-4 text-slate-500 font-medium">Centro Quirúrgico</td>
+            <td class="py-3 px-4 text-right font-mono text-emerald-700 font-bold">1</td>
+            <td class="py-3 px-4 text-right font-mono text-rose-700 font-bold">0</td>
+            <td class="py-3 px-4 text-right font-mono font-black text-[#003876]">1</td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-50 text-rose-700 border border-rose-200">0.0%</span>
+            </td>
+          </tr>
         </tbody>
           </table>
         </div>
@@ -585,62 +897,57 @@
           <div>
             <div class="flex items-center justify-between">
               <h3 class="text-base font-extrabold text-[#003876]">Tecnólogo Médico</h3>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-sky-100 text-[#003876]" id="badgeTecAreaFiltro">URGENCIAS / EMERGENCIA</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-sky-100 text-[#003876]" id="badgeTecAreaFiltro">TODAS LAS ÁREAS</span>
             </div>
             <p class="text-xs text-slate-500 mt-1">10 profesionales oficiales del hospital</p>
 
             <div class="mt-4">
               <label class="text-[11px] font-bold text-slate-700 uppercase">Profesional de la Base:</label>
               <select id="selectTecnologo" onchange="actualizarDetalleTecnologo()" class="mt-1.5 w-full bg-sky-50 border border-sky-300 rounded-xl px-3 py-2 text-xs font-bold text-[#003876] focus:outline-none focus:border-[#00A9E0] focus:bg-white">
-        <option value="0">1. MALASQUEZ NOLASCO DORIS ELENA</option>
+        <option value="0">1. TERAN ROJAS YONY ALEXANDER</option>
       
-        <option value="1">2. GONZALES ALVARADO AMADA JULIA</option>
+        <option value="1">2. SERRANO LA BARRERA EMILIA LEONOR</option>
       
-        <option value="2">3. CAMPOS TOCAS DE PEREZ SILVIA ELVIRA</option>
+        <option value="2">3. DELGADO SECLEN JESUS ANILU</option>
       
-        <option value="3">4. DELGADO SECLEN JESUS ANILU</option>
+        <option value="3">4. MALASQUEZ NOLASCO DORIS ELENA</option>
       
-        <option value="4">5. REYES FERNANDEZ ROSA IZELA</option>
+        <option value="4">5. VASQUEZ CHAVEZ DICELLA LAELIA</option>
       
-        <option value="5">6. VILLANUEVA BECERRA BALDOMERO</option>
+        <option value="5">6. CAMPOS TOCAS DE PEREZ SILVIA ELVIRA</option>
       
-        <option value="6">7. SERRANO LA BARRERA EMILIA LEONOR</option>
+        <option value="6">7. VILLANUEVA BECERRA BALDOMERO</option>
       
-        <option value="7">8. TERAN ROJAS YONY ALEXANDER</option>
+        <option value="7">8. REYES FERNANDEZ ROSA IZELA</option>
       
-        <option value="8">9. VASQUEZ CHAVEZ DICELLA LAELIA</option>
+        <option value="8">9. CRUZ PEÑA FAUSTINA HILDA</option>
       
-        <option value="9">10. CRUZ PEÑA FAUSTINA HILDA</option>
+        <option value="9">10. GONZALES ALVARADO AMADA JULIA</option>
       </select>
             </div>
 
             <div class="mt-6 space-y-3" id="panelMetricasTecnologo">
         <div class="p-3 bg-sky-50 rounded-xl border border-sky-200">
-          <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider mb-2 block">Carga en URGENCIAS / EMERGENCIA</span>
+          <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider mb-2 block">Carga en TODAS LAS ÁREAS</span>
           
         <div class="flex items-center justify-between text-xs py-1.5 border-b border-sky-100">
           <span class="text-slate-600 font-semibold">BIOQUIMICA</span>
-          <span class="font-extrabold text-[#003876] font-mono">7542</span>
+          <span class="font-extrabold text-[#003876] font-mono">58.292</span>
         </div>
       
         <div class="flex items-center justify-between text-xs py-1.5 border-b border-sky-100">
           <span class="text-slate-600 font-semibold">HEMATOLOGIA Y COAGULACION</span>
-          <span class="font-extrabold text-[#003876] font-mono">3976</span>
-        </div>
-      
-        <div class="flex items-center justify-between text-xs py-1.5 border-b border-sky-100">
-          <span class="text-slate-600 font-semibold">MICROBIOLOGIA</span>
-          <span class="font-extrabold text-[#003876] font-mono">466</span>
+          <span class="font-extrabold text-[#003876] font-mono">4715</span>
         </div>
       
         <div class="flex items-center justify-between text-xs py-1.5 border-b border-sky-100">
           <span class="text-slate-600 font-semibold">INMUNOLOGIA</span>
-          <span class="font-extrabold text-[#003876] font-mono">438</span>
+          <span class="font-extrabold text-[#003876] font-mono">1721</span>
         </div>
       
         <div class="flex items-center justify-between text-xs py-1.5 border-b border-sky-100">
-          <span class="text-slate-600 font-semibold">TRANSFUSIONES</span>
-          <span class="font-extrabold text-[#003876] font-mono">2</span>
+          <span class="text-slate-600 font-semibold">MICROBIOLOGIA</span>
+          <span class="font-extrabold text-[#003876] font-mono">382</span>
         </div>
       
         </div>
@@ -656,10 +963,10 @@
         <div class="essalud-card p-5 rounded-2xl lg:col-span-3">
           <div class="flex items-center justify-between mb-3">
             <div>
-              <h3 class="text-base font-extrabold text-[#003876]" id="tituloGraficoTec">Producción: MALASQUEZ NOLASCO DORIS ELENA</h3>
-              <p class="text-xs text-slate-500" id="subtituloGraficoTec">Pruebas realizadas en URGENCIAS / EMERGENCIA</p>
+              <h3 class="text-base font-extrabold text-[#003876]" id="tituloGraficoTec">Producción: TERAN ROJAS YONY ALEXANDER</h3>
+              <p class="text-xs text-slate-500" id="subtituloGraficoTec">Pruebas realizadas en TODAS LAS ÁREAS</p>
             </div>
-            <span class="text-xs font-mono font-bold text-[#003876] bg-sky-50 border border-sky-200 px-3 py-1 rounded-lg" id="badgeTotalTec">Total URGENCIAS / EMERGENCIA: 12.424 análisis</span>
+            <span class="text-xs font-mono font-bold text-[#003876] bg-sky-50 border border-sky-200 px-3 py-1 rounded-lg" id="badgeTotalTec">Total TODAS LAS ÁREAS: 65.110 análisis</span>
           </div>
           <div class="h-72 w-full relative min-h-[260px]">
             <canvas id="chartTecnologoMes" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
@@ -670,10 +977,10 @@
       <div class="essalud-card p-5 rounded-2xl">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
-            <h3 class="text-base font-extrabold text-[#003876]" id="tituloRankingTec">Ranking de Productividad por Tecnólogo: URGENCIAS / EMERGENCIA</h3>
-            <p class="text-xs text-slate-500" id="subtituloRankingTec">Tecnólogos ordenados por volumen real en URGENCIAS / EMERGENCIA</p>
+            <h3 class="text-base font-extrabold text-[#003876]" id="tituloRankingTec">Ranking de Productividad por Tecnólogo: TODAS LAS ÁREAS</h3>
+            <p class="text-xs text-slate-500" id="subtituloRankingTec">Tecnólogos ordenados por volumen real en TODAS LAS ÁREAS</p>
           </div>
-          <span class="text-xs px-2.5 py-1 rounded bg-sky-100 text-[#003876] font-bold" id="badgeTotalAreaTec">Total URGENCIAS / EMERGENCIA: 43.452</span>
+          <span class="text-xs px-2.5 py-1 rounded bg-sky-100 text-[#003876] font-bold" id="badgeTotalAreaTec">Total TODAS LAS ÁREAS: 256.459</span>
         </div>
         <div class="h-96 w-full relative min-h-[350px]">
           <canvas id="chartRankingTecnologos" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas>
@@ -696,7 +1003,7 @@
             <span class="w-2.5 h-2.5 rounded-full" style="background-color: #00A9E0"></span>
             Bioquímica
           </span>
-          <span class="font-extrabold text-[#003876]">53.7% (23.4k)</span>
+          <span class="font-extrabold text-[#003876]">70% (179.5k)</span>
         </div>
       
         <div class="flex items-center justify-between py-1.5 border-b border-sky-100">
@@ -704,7 +1011,7 @@
             <span class="w-2.5 h-2.5 rounded-full" style="background-color: #003876"></span>
             Hematología y Coagulación
           </span>
-          <span class="font-extrabold text-[#003876]">31% (13.4k)</span>
+          <span class="font-extrabold text-[#003876]">17.1% (43.8k)</span>
         </div>
       
         <div class="flex items-center justify-between py-1.5 border-b border-sky-100">
@@ -712,7 +1019,7 @@
             <span class="w-2.5 h-2.5 rounded-full" style="background-color: #0284c7"></span>
             Microbiología
           </span>
-          <span class="font-extrabold text-[#003876]">12.2% (5.3k)</span>
+          <span class="font-extrabold text-[#003876]">8.1% (20.8k)</span>
         </div>
       
         <div class="flex items-center justify-between py-1.5 border-b border-sky-100">
@@ -720,7 +1027,7 @@
             <span class="w-2.5 h-2.5 rounded-full" style="background-color: #e11d48"></span>
             Inmunología
           </span>
-          <span class="font-extrabold text-[#003876]">3.1% (1.3k)</span>
+          <span class="font-extrabold text-[#003876]">3.9% (10.1k)</span>
         </div>
       
         <div class="flex items-center justify-between py-1.5 border-b border-sky-100">
@@ -728,7 +1035,7 @@
             <span class="w-2.5 h-2.5 rounded-full" style="background-color: #f59e0b"></span>
             Transfusiones
           </span>
-          <span class="font-extrabold text-[#003876]">0.03% (14)</span>
+          <span class="font-extrabold text-[#003876]">0.9% (2.2k)</span>
         </div>
       </div>
         </div>
@@ -785,8 +1092,8 @@
             <td class="py-2.5 px-2">
               <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">HEMATOLOGIA Y COAGULACION</span>
             </td>
-            <td class="py-2.5 px-2 text-right font-mono text-slate-600">1010</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1039</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1066</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2108</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1064</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1121</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1271</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1244</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1108</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1215</td>
-            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">12.246</td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">2129</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">3227</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">3385</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">4078</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">3403</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1965</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">3373</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2419</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2315</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2470</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">28.764</td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
@@ -794,8 +1101,8 @@
             <td class="py-2.5 px-2">
               <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
             </td>
-            <td class="py-2.5 px-2 text-right font-mono text-slate-600">829</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">755</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">800</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1750</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">769</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">766</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">884</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">888</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">828</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">892</td>
-            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">9161</td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">1709</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2631</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2537</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">3512</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2752</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1736</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">3118</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2413</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1942</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2060</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">24.410</td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
@@ -803,8 +1110,71 @@
             <td class="py-2.5 px-2">
               <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
             </td>
-            <td class="py-2.5 px-2 text-right font-mono text-slate-600">265</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">312</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">247</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">754</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">339</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">355</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">321</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">361</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">374</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">385</td>
-            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">3713</td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">1562</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2556</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2562</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">3040</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2924</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1550</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2356</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1672</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1659</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1720</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">21.601</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="DOSAJE DE CREATININA EN SANGRE">DOSAJE DE CREATININA EN SANGRE</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">1178</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2001</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2040</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2346</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">2330</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1294</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1902</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1426</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1360</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1425</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">17.302</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="NITROGENO UREICO; CUANTITATIVO">NITROGENO UREICO; CUANTITATIVO</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">990</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1633</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1823</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1956</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1878</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1091</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1617</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1122</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1037</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1100</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">14.247</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="DOSAJE DE COLESTEROL TOTAL EN SANGRE COMPLETA O SUERO">DOSAJE DE COLESTEROL TOTAL EN SANGRE COMPLETA O SUERO</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">742</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1545</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1812</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1496</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1753</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">775</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1301</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">886</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">840</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">890</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">12.040</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="TRIGLICERIDOS">TRIGLICERIDOS</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">745</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1559</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1395</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">4</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1730</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">789</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1313</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">888</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">844</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">895</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">10.162</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="ACIDO URICO; EN SANGRE">ACIDO URICO; EN SANGRE</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">486</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">953</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1132</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">920</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1140</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">449</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">775</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">519</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">456</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">480</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">7310</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="DETERMINACION CUALITATIVA DE SANGRE OCULTA EN HECES">DETERMINACION CUALITATIVA DE SANGRE OCULTA EN HECES</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">461</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">911</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1005</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">832</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">799</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">361</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">937</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">633</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">437</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">460</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">6836</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="TRANSFERASA; AMINO ALANINA (ALT) (SGPT)">TRANSFERASA; AMINO ALANINA (ALT) (SGPT)</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">394</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">798</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">912</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">748</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">842</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">388</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">688</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">416</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">437</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">460</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">6083</td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
@@ -814,24 +1184,6 @@
             </td>
             <td class="py-2.5 px-2 text-right font-mono text-slate-600">237</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">270</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">267</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">680</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">309</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">307</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">446</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">391</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">327</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">360</td>
             <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">3594</td>
-          </tr>
-        
-          <tr class="hover:bg-sky-50/60 transition">
-            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="DOSAJE DE CREATININA EN SANGRE">DOSAJE DE CREATININA EN SANGRE</td>
-            <td class="py-2.5 px-2">
-              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
-            </td>
-            <td class="py-2.5 px-2 text-right font-mono text-slate-600">299</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">356</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">302</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">660</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">301</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">341</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">303</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">310</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">330</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">345</td>
-            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">3547</td>
-          </tr>
-        
-          <tr class="hover:bg-sky-50/60 transition">
-            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="NITROGENO UREICO; CUANTITATIVO">NITROGENO UREICO; CUANTITATIVO</td>
-            <td class="py-2.5 px-2">
-              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
-            </td>
-            <td class="py-2.5 px-2 text-right font-mono text-slate-600">279</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">326</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">282</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">580</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">272</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">314</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">285</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">284</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">297</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">315</td>
-            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">3234</td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
@@ -853,6 +1205,15 @@
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="TIPIFICACION DE SANGRE; ABO">TIPIFICACION DE SANGRE; ABO</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">HEMATOLOGIA Y COAGULACION</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">67</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">81</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">68</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">140</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">89</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">74</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">97</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">92</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">92</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">100</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">900</td>
+          </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
             <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="ANALISIS DE ORINA, BACTERIURIA, EXCEPTO MEDIANTE CULTIVO O TIRA REACTIVA">ANALISIS DE ORINA, BACTERIURIA, EXCEPTO MEDIANTE CULTIVO O TIRA REACTIVA</td>
             <td class="py-2.5 px-2">
               <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
@@ -862,12 +1223,12 @@
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
-            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="TIPIFICACION DE SANGRE; ABO">TIPIFICACION DE SANGRE; ABO</td>
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="HEMATOCRITO">HEMATOCRITO</td>
             <td class="py-2.5 px-2">
               <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">HEMATOLOGIA Y COAGULACION</span>
             </td>
-            <td class="py-2.5 px-2 text-right font-mono text-slate-600">51</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">71</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">50</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">104</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">71</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">61</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">81</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">69</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">74</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">80</td>
-            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">712</td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">41</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">42</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">50</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">108</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">66</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">82</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">48</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">78</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">59</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">66</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">640</td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
@@ -886,15 +1247,6 @@
             </td>
             <td class="py-2.5 px-2 text-right font-mono text-slate-600">32</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">41</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">30</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">58</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">32</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">38</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">44</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">33</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">58</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">62</td>
             <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">428</td>
-          </tr>
-        
-          <tr class="hover:bg-sky-50/60 transition">
-            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="HEMATOCRITO">HEMATOCRITO</td>
-            <td class="py-2.5 px-2">
-              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">HEMATOLOGIA Y COAGULACION</span>
-            </td>
-            <td class="py-2.5 px-2 text-right font-mono text-slate-600">30</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">29</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">27</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">60</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">44</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">61</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">30</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">46</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">28</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">35</td>
-            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">390</td>
           </tr>
         
           <tr class="hover:bg-sky-50/60 transition">
@@ -932,11 +1284,20 @@
             <td class="py-2.5 px-2 text-right font-mono text-slate-600">18</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">15</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">13</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">16</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">18</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">18</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">11</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">24</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">12</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">15</td>
             <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">160</td>
           </tr>
+        
+          <tr class="hover:bg-sky-50/60 transition">
+            <td class="py-2.5 px-3 font-bold text-slate-800 max-w-sm truncate" title="DOSAJE DE FOSFATASA, ALCALINA">DOSAJE DE FOSFATASA, ALCALINA</td>
+            <td class="py-2.5 px-2">
+              <span class="text-[9px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider bg-sky-100 text-[#003876] border border-sky-200">BIOQUIMICA</span>
+            </td>
+            <td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">1</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td><td class="py-2.5 px-2 text-right font-mono text-slate-600">0</td>
+            <td class="py-2.5 px-3 text-right font-mono font-black text-[#003876] bg-sky-50/70">1</td>
+          </tr>
         </tbody>
             <tfoot class="bg-sky-50 font-bold text-[#003876] border-t-2 border-sky-200">
               <tr>
                 <td id="colSpanSubtotal" colspan="12" class="py-3 px-4 text-right uppercase tracking-wider text-[11px]">Suma Total Filtrada:</td>
-                <td class="py-3 px-3 text-right font-mono text-[#003876] font-black text-sm" id="totalGeneralTablaExamenes">41.754</td>
+                <td class="py-3 px-3 text-right font-mono text-[#003876] font-black text-sm" id="totalGeneralTablaExamenes">159.047</td>
               </tr>
             </tfoot>
           </table>
@@ -987,32 +1348,32 @@
     "areasLab": [
       {
         "nombre": "Bioquímica",
-        "volumen": 154820,
-        "porcentaje": 60.4,
+        "volumen": 179530,
+        "porcentaje": 70,
         "color": "#00A9E0"
       },
       {
         "nombre": "Hematología y Coagulación",
-        "volumen": 57120,
-        "porcentaje": 22.3,
+        "volumen": 43770,
+        "porcentaje": 17.1,
         "color": "#003876"
       },
       {
         "nombre": "Microbiología",
-        "volumen": 29150,
-        "porcentaje": 11.4,
+        "volumen": 20830,
+        "porcentaje": 8.1,
         "color": "#0284c7"
       },
       {
         "nombre": "Inmunología",
-        "volumen": 13150,
-        "porcentaje": 5.1,
+        "volumen": 10120,
+        "porcentaje": 3.9,
         "color": "#e11d48"
       },
       {
         "nombre": "Transfusiones",
-        "volumen": 2219,
-        "porcentaje": 0.8,
+        "volumen": 2209,
+        "porcentaje": 0.9,
         "color": "#f59e0b"
       }
     ]
@@ -1052,27 +1413,33 @@
     "areasLab": [
       {
         "nombre": "Bioquímica",
-        "volumen": 154820,
+        "volumen": 154646,
         "porcentaje": 73.8,
         "color": "#00A9E0"
       },
       {
         "nombre": "Hematología y Coagulación",
-        "volumen": 25890,
-        "porcentaje": 12.3,
+        "volumen": 27820,
+        "porcentaje": 13.3,
         "color": "#003876"
       },
       {
         "nombre": "Microbiología",
-        "volumen": 22260,
-        "porcentaje": 10.6,
+        "volumen": 16840,
+        "porcentaje": 8,
         "color": "#0284c7"
       },
       {
         "nombre": "Inmunología",
-        "volumen": 6707,
-        "porcentaje": 3.2,
+        "volumen": 8171,
+        "porcentaje": 3.9,
         "color": "#e11d48"
+      },
+      {
+        "nombre": "Transfusiones",
+        "volumen": 2200,
+        "porcentaje": 1,
+        "color": "#f59e0b"
       }
     ]
   },
@@ -1111,32 +1478,32 @@
     "areasLab": [
       {
         "nombre": "Bioquímica",
-        "volumen": 23350,
-        "porcentaje": 53.7,
+        "volumen": 23079,
+        "porcentaje": 53.1,
         "color": "#00A9E0"
       },
       {
         "nombre": "Hematología y Coagulación",
-        "volumen": 13450,
-        "porcentaje": 31,
+        "volumen": 14810,
+        "porcentaje": 34.1,
         "color": "#003876"
       },
       {
         "nombre": "Microbiología",
-        "volumen": 5300,
-        "porcentaje": 12.2,
+        "volumen": 3868,
+        "porcentaje": 8.9,
         "color": "#0284c7"
       },
       {
         "nombre": "Inmunología",
-        "volumen": 1338,
-        "porcentaje": 3.1,
+        "volumen": 1691,
+        "porcentaje": 3.9,
         "color": "#e11d48"
       },
       {
         "nombre": "Transfusiones",
-        "volumen": 14,
-        "porcentaje": 0.03,
+        "volumen": 4,
+        "porcentaje": 0.01,
         "color": "#f59e0b"
       }
     ]
@@ -1176,20 +1543,20 @@
     "areasLab": [
       {
         "nombre": "Bioquímica",
-        "volumen": 1740,
-        "porcentaje": 52.4,
+        "volumen": 1797,
+        "porcentaje": 54.2,
         "color": "#00A9E0"
       },
       {
         "nombre": "Hematología y Coagulación",
-        "volumen": 1102,
-        "porcentaje": 33.2,
+        "volumen": 1138,
+        "porcentaje": 34.3,
         "color": "#003876"
       },
       {
         "nombre": "Inmunología",
-        "volumen": 351,
-        "porcentaje": 10.6,
+        "volumen": 257,
+        "porcentaje": 7.7,
         "color": "#e11d48"
       },
       {
@@ -1200,7 +1567,7 @@
       },
       {
         "nombre": "Transfusiones",
-        "volumen": 3,
+        "volumen": 4,
         "porcentaje": 0.1,
         "color": "#f59e0b"
       }
@@ -1241,8 +1608,8 @@
     "areasLab": [
       {
         "nombre": "Bioquímica",
-        "volumen": 9,
-        "porcentaje": 75,
+        "volumen": 8,
+        "porcentaje": 66.7,
         "color": "#00A9E0"
       },
       {
@@ -1256,12 +1623,18 @@
         "volumen": 1,
         "porcentaje": 8.3,
         "color": "#e11d48"
+      },
+      {
+        "nombre": "Transfusiones",
+        "volumen": 1,
+        "porcentaje": 8.3,
+        "color": "#f59e0b"
       }
     ]
   }
 };
 
-    // 2. MATRIZ EXACTA DE PRODUCCIÓN DE TECNÓLOGOS (10 OFICIALES)
+    // 2. MATRIZ DE PRODUCCIÓN DE TECNÓLOGOS (10 OFICIALES)
     let PRODUCCION_TECNOLOGOS_POR_AREA = {
   "EMERGENCIA": [
     {
@@ -3207,7 +3580,7 @@
     }
     calcularConsolidadoTodas();
 
-    // 4. DIRECTORIO SEGMENTADO Y REAL DE MÉDICOS POR CADA SERVICIO
+    // 4. DIRECTORIO SEGMENTADO Y REAL DE MÉDICOS
     let MEDICOS_POR_AREA = {
   "CONSULTA": [
     {
@@ -3697,7 +4070,6 @@
   ]
 };
 
-    // Consolidado para TODAS
     MEDICOS_POR_AREA.TODAS = [
       ...MEDICOS_POR_AREA.CONSULTA,
       ...MEDICOS_POR_AREA.EMERGENCIA,
@@ -4163,7 +4535,7 @@
           <div class="mt-3">
             <h4 class="text-xl font-black text-[#003876]">${area.volumen.toLocaleString()}</h4>
             <div class="flex items-center justify-between text-xs text-slate-500 mt-1 font-semibold">
-              <span>Procesadas</span>
+              <span>Pacientes</span>
               <span class="font-bold text-[#00A9E0]">${area.porcentaje}%</span>
             </div>
           </div>
@@ -4303,7 +4675,7 @@
       // Garantizar que la versión exportada inicie en la pestaña de Resumen General
       htmlContent = htmlContent.replace(/<section id="tab-resumen" class="tab-content space-y-6">/, '<section id="tab-resumen" class="tab-content space-y-6">');
       htmlContent = htmlContent.replace(/<section id="tab-examenes" class="tab-content hidden space-y-6">/, '<section id="tab-examenes" class="tab-content hidden space-y-6">');
-      htmlContent = htmlContent.replace(/<section id="tab-solicitudes" class="tab-content space-y-6">/, '<section id="tab-solicitudes" class="tab-content hidden space-y-6">');
+      htmlContent = htmlContent.replace(/<section id="tab-solicitudes" class="tab-content hidden space-y-6">/, '<section id="tab-solicitudes" class="tab-content hidden space-y-6">');
       htmlContent = htmlContent.replace(/<section id="tab-tecnologos" class="tab-content hidden space-y-6">/, '<section id="tab-tecnologos" class="tab-content hidden space-y-6">');
 
       const blob = new Blob(["<!DOCTYPE html>\n" + htmlContent], { type: "text/html;charset=utf-8" });
@@ -4315,7 +4687,7 @@
       document.body.removeChild(link);
       URL.revokeObjectURL(link.href);
 
-      alert("¡Archivo 'index.html' descargado con éxito!\n\nEste archivo iniciará siempre en el Resumen General, listo para subir a GitHub.");
+      alert("¡Archivo 'index.html' descargado con éxito!\n\nEste archivo tiene todas las especialidades cuadradas, listo para subir a GitHub.");
     }
 
     // INICIALIZACIÓN
@@ -4328,8 +4700,6 @@
       renderMedicosTable();
       renderExamenesTable();
       seleccionarAreaGlobal('TODAS');
-      
-      // FORZAR QUE INICIE EN RESUMEN GENERAL POR DEFECTO
       switchTab('resumen');
     });
   </script>
