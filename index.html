@@ -59,7 +59,7 @@
 
     <!-- Menú de Pestañas -->
     <nav class="flex items-center gap-1.5 bg-[#002855] p-1.5 rounded-xl border border-sky-800 overflow-x-auto max-w-full">
-      <button onclick="switchTab('resumen')" id="btn-tab-resumen" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-2 transition-all whitespace-nowrap text-sky-200">
+      <button onclick="switchTab('resumen')" id="btn-tab-resumen" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-2 transition-all whitespace-nowrap bg-[#00A9E0] text-white shadow">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard w-4 h-4"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
         <span>Resumen General</span>
       </button>
@@ -71,7 +71,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users w-4 h-4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
         <span>Producción Tecnólogos</span>
       </button>
-      <button onclick="switchTab('examenes')" id="btn-tab-examenes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all hover:text-white whitespace-nowrap bg-[#00A9E0] text-white shadow">
+      <button onclick="switchTab('examenes')" id="btn-tab-examenes" class="tab-btn px-4 py-2 text-xs font-semibold rounded-lg flex items-center gap-2 transition-all hover:text-white whitespace-nowrap text-sky-200">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="test-tube" aria-hidden="true" class="lucide lucide-test-tube w-4 h-4"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2"></path><path d="M8.5 2h7"></path><path d="M14.5 16h-5"></path></svg>
         <span>Exámenes y Áreas</span>
       </button>
@@ -128,7 +128,7 @@
   <main class="flex-1 overflow-y-auto custom-scroll p-4 md:p-6 space-y-6">
 
     <!-- ==================== PESTAÑA 1: RESUMEN GENERAL ==================== -->
-    <section id="tab-resumen" class="tab-content space-y-6 hidden">
+    <section id="tab-resumen" class="tab-content space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="essalud-card p-5 rounded-2xl relative overflow-hidden group hover:border-[#00A9E0] transition-all">
           <div class="flex items-center justify-between">
@@ -989,7 +989,7 @@
     </section>
 
     <!-- ==================== PESTAÑA 4: EXÁMENES Y ÁREAS ==================== -->
-    <section id="tab-examenes" class="tab-content space-y-6">
+    <section id="tab-examenes" class="tab-content space-y-6 hidden">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="essalud-card p-5 rounded-2xl">
           <h3 class="text-base font-extrabold text-[#003876] mb-1">¿Qué Área de Laboratorio Produce Más?</h3>
